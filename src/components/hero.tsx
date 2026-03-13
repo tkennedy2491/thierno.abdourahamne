@@ -101,7 +101,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Roue de compétences animée */}
+        {/* Roue de compétences */}
         <div className="relative flex items-center justify-center animate-in fade-in zoom-in duration-1000">
           <div className="relative w-[500px] h-[500px] flex items-center justify-center group">
             
@@ -116,9 +116,8 @@ export function Hero() {
             <div className="absolute inset-0 border border-dashed border-slate-800/20 rounded-full scale-100" />
             <div className="absolute inset-0 border border-dashed border-slate-800/10 rounded-full scale-75" />
 
-            {/* Conteneur d'icônes en rotation orbitale */}
-            {/* L'animation globale tourne, et on applique une contre-rotation sur chaque icône */}
-            <div className="absolute inset-0 animate-[spin_40s_linear_infinite] group-hover:[animation-play-state:paused]">
+            {/* Conteneur d'icônes disposées en cercle (Statique pour la lisibilité) */}
+            <div className="absolute inset-0">
               {orbitItems.map((item, index) => {
                 const radius = 220; 
                 const x = Math.cos((item.angle * Math.PI) / 180) * radius;
@@ -132,9 +131,7 @@ export function Hero() {
                       transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                     }}
                   >
-                    {/* Contre-rotation : Cette div tourne en sens inverse de la parente */}
-                    {/* pour que l'icône reste toujours droite (verticale) */}
-                    <div className="animate-[spin_40s_linear_infinite_reverse] group-hover:[animation-play-state:paused] transition-transform duration-300 hover:scale-150 cursor-pointer">
+                    <div className="transition-transform duration-300 hover:scale-150 cursor-pointer">
                       {item.icon}
                     </div>
                   </div>
