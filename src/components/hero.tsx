@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Download } from 'lucide-react';
 
-// Icônes SVG pour la roue (Logos de marques fidèles)
+// Icônes de technologies épurées (uniquement le logo)
 const TechIcons = {
   React: () => (
-    <svg viewBox="-11.5 -10.23174 23 20.46348" className="w-10 h-10 fill-[#61dafb]">
+    <svg viewBox="-11.5 -10.23174 23 20.46348" className="w-12 h-12 fill-[#61dafb]">
       <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
       <g stroke="#61dafb" strokeWidth="1" fill="none">
         <ellipse rx="11" ry="4.2"/>
@@ -19,29 +19,29 @@ const TechIcons = {
     </svg>
   ),
   NodeJS: () => (
-    <svg viewBox="0 0 256 256" className="w-10 h-10">
+    <svg viewBox="0 0 256 256" className="w-12 h-12">
       <path fill="#339933" d="M128 0L20.8 61.8v132.4L128 256l107.2-61.8V61.8L128 0zm-13.8 213.6c-20.4-3.5-36.8-19.1-41.5-39.6l-1.3-5.7h23.8l1 3.4c2.6 9 8.8 15.3 17.1 17.5 10.4 2.8 20.5-2.2 24.1-11.9 1.4-3.7 1.5-4.8 1.5-29.2v-25.1l-5.6 5.2c-5.5 5.2-13.2 8-20.9 7.7-18.7-.7-34.4-14.2-39.3-33.7-2-7.9-2-21.7 0-29.6 4.6-18.1 18.2-31.5 35.5-35 8.1-1.6 18.2-.8 25.1 2.1l6.2 2.6v-2.3c0-2 0-2.3 1.7-4.1l1.7-1.8h21.9v88.2c0 62.4-.2 73.1-1.3 78.4-4.8 23.3-24.8 40.2-48.4 41zm21.6-121.2c0-11.7-.3-13.3-2.6-18.1-4.9-10.4-14.8-15.6-26.1-13.8-10 1.6-17.7 8.9-20.8 19.8-1.5 5.2-1.5 15.6 0 20.8 2.8 9.6 9.4 16.5 18.3 19.3 5.4 1.6 13.9 1.3 19-.8 8.1-3.3 12.2-9 12.2-17.1v-10.1zm59.6 33.6c-11.3-4.2-17.3-8.8-19.1-14.4-.8-2.6-.8-8.1 0-10.7 1.7-5.1 6.8-9.4 12.6-10.6 3.6-.8 9.4-.5 12.9.7 7.1 2.3 12 7.7 13.2 14.5l.6 3.1h23.4l-.8-5.7c-2.3-15.6-12.7-27.7-27.4-31.9-8.4-2.4-20.8-2.2-28.9.5-16.7 5.6-27 20.2-27 38.3 0 11.2 3.3 19.7 10.6 27.5 7 7.5 15.6 11.8 30.6 15.3 12.1 2.8 17.5 5.2 20.5 9.1 3.5 4.5 3.9 11.2 1 15.5-2.9 4.3-8.5 6.6-15.1 6.3-8.4-.4-14.6-4.6-16.9-11.4l-.9-2.7h-24.1l.9 5.5c2.4 14.2 11.9 25.1 25.5 29.3 8.3 2.6 20.8 2.6 29 0 14.5-4.5 24.3-15.3 26.3-29 1.1-7.7.3-17.7-2.1-23.7-3-7.5-10.1-13.7-23.9-19z"/>
     </svg>
   ),
   Laravel: () => (
-    <svg viewBox="0 0 24 24" className="w-10 h-10 fill-[#ff2d20]">
+    <svg viewBox="0 0 24 24" className="w-12 h-12 fill-[#ff2d20]">
       <path d="M5.385 10.101h12.593l-.407 1.134h-1.282l-3.39 9.308-2.964-.002 2.94-8.082-.016-.041.011-.031-1.127-3.111-3.39 9.304-2.965-.002L8.33 10.51l-.412 1.129H6.634l-1.25 3.421H3.66l1.725-4.959zm5.334 3.738l.61 1.677-1.154 3.17h-1.636l2.18-5.992v1.145zm6.814-11.822l-1.554 4.254h2.181l1.553-4.254h-2.18zm-2.181 5.991l-2.18 5.991.61 1.677 1.57-4.314v-3.354z"/>
     </svg>
   ),
   JS: () => (
-    <div className="bg-[#f7df1e] text-black font-bold p-1 rounded-sm w-10 h-10 flex items-center justify-center text-sm shadow-lg">JS</div>
+    <div className="bg-[#f7df1e] text-black font-bold rounded-sm w-12 h-12 flex items-center justify-center text-lg shadow-xl">JS</div>
   ),
   TS: () => (
-    <div className="bg-[#3178c6] text-white font-bold p-1 rounded-sm w-10 h-10 flex items-center justify-center text-sm shadow-lg">TS</div>
+    <div className="bg-[#3178c6] text-white font-bold rounded-sm w-12 h-12 flex items-center justify-center text-lg shadow-xl">TS</div>
   ),
   Next: () => (
-    <div className="bg-white text-black font-bold rounded-full w-10 h-10 flex items-center justify-center text-2xl border border-slate-200 shadow-lg">N</div>
+    <div className="bg-white text-black font-bold rounded-full w-12 h-12 flex items-center justify-center text-3xl border border-slate-200 shadow-xl">N</div>
   ),
   Express: () => (
-    <div className="text-white font-bold italic w-10 h-10 flex items-center justify-center text-2xl drop-shadow-lg">ex</div>
+    <div className="text-white font-bold italic w-12 h-12 flex items-center justify-center text-3xl drop-shadow-xl">ex</div>
   ),
   Tailwind: () => (
-    <svg viewBox="0 0 24 24" className="w-10 h-10 fill-[#38bdf8]">
+    <svg viewBox="0 0 24 24" className="w-12 h-12 fill-[#38bdf8]">
       <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.2 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.537 6.182 15.176 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.712 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.537 13.382 9.176 12 6.001 12z"/>
     </svg>
   )
@@ -56,14 +56,6 @@ const orbitItems = [
   { icon: <TechIcons.Next />, angle: 225 },
   { icon: <TechIcons.Express />, angle: 270 },
   { icon: <TechIcons.Tailwind />, angle: 315 },
-  { icon: <TechIcons.NodeJS />, angle: 22.5 },
-  { icon: <TechIcons.React />, angle: 67.5 },
-  { icon: <TechIcons.JS />, angle: 112.5 },
-  { icon: <TechIcons.Express />, angle: 157.5 },
-  { icon: <TechIcons.TS />, angle: 202.5 },
-  { icon: <TechIcons.Next />, angle: 247.5 },
-  { icon: <TechIcons.Laravel />, angle: 292.5 },
-  { icon: <TechIcons.Tailwind />, angle: 337.5 },
 ];
 
 export function Hero() {
@@ -109,23 +101,24 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Roue de compétences animée - Épurée */}
+        {/* Roue de compétences animée */}
         <div className="relative flex items-center justify-center animate-in fade-in zoom-in duration-1000">
-          <div className="relative w-[500px] h-[500px] flex items-center justify-center">
+          <div className="relative w-[500px] h-[500px] flex items-center justify-center group">
             
             {/* Texte Central "Skills" */}
             <div className="relative z-20 pointer-events-none">
-              <h3 className="text-8xl font-black italic text-white/90 drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] tracking-tighter">
+              <h3 className="text-8xl font-black italic text-white/90 drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] tracking-tighter select-none">
                 Skills
               </h3>
             </div>
 
             {/* Orbites décoratives */}
-            <div className="absolute inset-0 border border-dashed border-slate-800/50 rounded-full scale-110" />
-            <div className="absolute inset-0 border border-dashed border-slate-800/30 rounded-full scale-75" />
+            <div className="absolute inset-0 border border-dashed border-slate-800/20 rounded-full scale-100" />
+            <div className="absolute inset-0 border border-dashed border-slate-800/10 rounded-full scale-75" />
 
-            {/* Conteneur d'icônes en rotation */}
-            <div className="absolute inset-0 animate-[spin_45s_linear_infinite]">
+            {/* Conteneur d'icônes en rotation orbitale */}
+            {/* L'animation globale tourne, et on applique une contre-rotation sur chaque icône */}
+            <div className="absolute inset-0 animate-[spin_40s_linear_infinite] group-hover:[animation-play-state:paused]">
               {orbitItems.map((item, index) => {
                 const radius = 220; 
                 const x = Math.cos((item.angle * Math.PI) / 180) * radius;
@@ -139,8 +132,9 @@ export function Hero() {
                       transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                     }}
                   >
-                    {/* Contre-rotation pour garder l'icône droite sans boîte */}
-                    <div className="animate-[spin_45s_linear_infinite_reverse] transition-transform duration-300 hover:scale-150 cursor-pointer">
+                    {/* Contre-rotation : Cette div tourne en sens inverse de la parente */}
+                    {/* pour que l'icône reste toujours droite (verticale) */}
+                    <div className="animate-[spin_40s_linear_infinite_reverse] group-hover:[animation-play-state:paused] transition-transform duration-300 hover:scale-150 cursor-pointer">
                       {item.icon}
                     </div>
                   </div>
@@ -149,7 +143,7 @@ export function Hero() {
             </div>
 
             {/* Effet de lueur centrale */}
-            <div className="absolute inset-0 bg-primary/5 rounded-full blur-[80px]" />
+            <div className="absolute inset-0 bg-primary/5 rounded-full blur-[100px]" />
           </div>
         </div>
       </div>
