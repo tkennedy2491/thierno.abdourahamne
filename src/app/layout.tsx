@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'DevSphere | Modern Portfolio',
-  description: 'Full Stack Developer Portfolio showcasing innovative projects and technical expertise.',
+  title: 'Godson | Développeur Web & Mobile',
+  description: 'Portfolio de Godson, Développeur web & mobile spécialisé en Typescript, React et Node.js.',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="fr" className="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

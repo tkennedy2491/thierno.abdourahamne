@@ -8,10 +8,10 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
+  { name: 'Accueil', href: '#home' },
+  { name: 'À propos', href: '#about' },
+  { name: 'Compétences', href: '#skills' },
+  { name: 'Projets', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -36,10 +36,10 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-2 group">
-          <div className="bg-primary p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
-            <Code2 className="w-6 h-6 text-white" />
+          <div className="bg-primary p-1.5 rounded-lg group-hover:rotate-12 transition-transform text-white">
+            <Code2 className="w-6 h-6" />
           </div>
-          <span className="text-xl font-bold font-headline tracking-tight">DevSphere</span>
+          <span className="text-xl font-bold font-headline tracking-tight">Godson</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -53,8 +53,8 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90">
-            <Link href="#contact">Hire Me</Link>
+          <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 text-white">
+            <Link href="#contact">Me contacter</Link>
           </Button>
         </div>
 
@@ -86,8 +86,8 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button asChild variant="default" className="w-full mt-2">
-            <Link href="#contact" onClick={() => setIsOpen(false)}>Hire Me</Link>
+          <Button asChild variant="default" className="w-full mt-2 text-white">
+            <Link href="#contact" onClick={() => setIsOpen(false)}>Me contacter</Link>
           </Button>
         </div>
       </div>
