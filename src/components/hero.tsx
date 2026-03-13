@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Download } from 'lucide-react';
 
-// Icônes de technologies épurées (uniquement le logo)
+// Icônes de technologies épurées
 const TechIcons = {
   React: () => (
     <svg viewBox="-11.5 -10.23174 23 20.46348" className="w-12 h-12 fill-[#61dafb]">
@@ -112,12 +111,12 @@ export function Hero() {
               </h3>
             </div>
 
-            {/* Orbites décoratives */}
+            {/* Orbites décoratives (Statiques) */}
             <div className="absolute inset-0 border border-dashed border-slate-800/20 rounded-full scale-100" />
             <div className="absolute inset-0 border border-dashed border-slate-800/10 rounded-full scale-75" />
 
-            {/* Conteneur d'icônes disposées en cercle (Statique pour la lisibilité) */}
-            <div className="absolute inset-0">
+            {/* Conteneur d'icônes avec animation orbitale */}
+            <div className="absolute inset-0 animate-orbit">
               {orbitItems.map((item, index) => {
                 const radius = 220; 
                 const x = Math.cos((item.angle * Math.PI) / 180) * radius;
@@ -126,13 +125,16 @@ export function Hero() {
                 return (
                   <div
                     key={index}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    className="absolute top-1/2 left-1/2"
                     style={{
                       transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                     }}
                   >
-                    <div className="transition-transform duration-300 hover:scale-150 cursor-pointer">
-                      {item.icon}
+                    {/* Contre-rotation pour garder l'icône droite */}
+                    <div className="animate-counter-orbit">
+                      <div className="transition-transform duration-300 hover:scale-150 cursor-pointer">
+                        {item.icon}
+                      </div>
                     </div>
                   </div>
                 );
