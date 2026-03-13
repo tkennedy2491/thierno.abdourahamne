@@ -1,0 +1,35 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "profile-pic",
+      "description": "Professional portrait of a software developer",
+      "imageUrl": "https://picsum.photos/seed/devsphere-profile/400/400",
+      "imageHint": "professional developer portrait"
+    },
+    {
+      "id": "project-1",
+      "description": "Dashboard interface for an e-commerce platform",
+      "imageUrl": "https://picsum.photos/seed/project1/800/600",
+      "imageHint": "dashboard interface"
+    },
+    {
+      "id": "project-2",
+      "description": "Mobile application UI for a fitness tracker",
+      "imageUrl": "https://picsum.photos/seed/project2/800/600",
+      "imageHint": "mobile app ui"
+    },
+    {
+      "id": "project-3",
+      "description": "Web-based collaborative task manager",
+      "imageUrl": "https://picsum.photos/seed/project3/800/600",
+      "imageHint": "task manager interface"
+    },
+    {
+      "id": "hero-bg",
+      "description": "Abstract dark purple technological background",
+      "imageUrl": "https://picsum.photos/seed/herobg/1920/1080",
+      "imageHint": "abstract tech background"
+    }
+  ]
+}
