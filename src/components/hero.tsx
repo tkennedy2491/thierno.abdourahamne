@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -155,12 +156,12 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Button asChild size="lg" className="px-8 bg-[#1e293b] hover:bg-slate-700 border border-slate-700 text-white font-bold rounded-full h-14 transition-all shadow-lg">
+            <Button asChild size="lg" className="px-8 bg-[#1e293b]/60 hover:bg-slate-700/80 border border-slate-700 text-white font-medium rounded-full h-14 transition-all backdrop-blur-sm">
               <Link href="#">
                 Mon CV <Download className="ml-2 w-4 h-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="px-8 border-slate-700 bg-transparent hover:bg-slate-800/50 text-white font-bold rounded-full h-14 transition-all">
+            <Button asChild variant="outline" size="lg" className="px-8 border-slate-700 bg-transparent hover:bg-white/5 text-white font-medium rounded-full h-14 transition-all">
               <Link href="#contact">Contactez-moi</Link>
             </Button>
           </div>
