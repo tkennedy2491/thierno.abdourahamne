@@ -1,0 +1,123 @@
+mutation CreateDemoData @transaction {
+  user_upsertMany(data: [
+    {
+      id: "b452875d-3d44-48f8-a1c2-39c4f74659a8",
+      displayName: "Alice Smith",
+      email: "alice.smith@example.com",
+      createdAt: "2023-01-01T10:00:00Z",
+      bio: "Software Engineer with a passion for open source.",
+      photoUrl: "https://example.com/alice.jpg",
+      contactEmail: "alice.smith@contact.com",
+      githubUrl: "https://github.com/alicesmith",
+      linkedinUrl: "https://linkedin.com/in/alicesmith",
+      websiteUrl: "https://alicesmith.dev"
+    },
+    {
+      id: "c876b2e1-4c63-4a7f-9b2c-8d5f1e0a2b3c",
+      displayName: "Bob Johnson",
+      email: "bob.johnson@example.com",
+      createdAt: "2023-02-15T11:30:00Z",
+      bio: "UI/UX Designer, focusing on user-centered experiences.",
+      photoUrl: "https://example.com/bob.jpg",
+      contactEmail: "bob.johnson@contact.com",
+      githubUrl: "https://github.com/bobjohnson",
+      linkedinUrl: "https://linkedin.com/in/bobjohnson",
+      websiteUrl: "https://bobjohnson.design"
+    }
+  ])
+  education_upsertMany(data: [
+    {
+      userId: "b452875d-3d44-48f8-a1c2-39c4f74659a8",
+      institutionName: "University of Technology",
+      degree: "B.Sc. Computer Science",
+      fieldOfStudy: "Software Engineering",
+      startDate: "2018-09-01",
+      endDate: "2022-06-30",
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    },
+    {
+      userId: "c876b2e1-4c63-4a7f-9b2c-8d5f1e0a2b3c",
+      institutionName: "Art & Design Institute",
+      degree: "M.A. Interaction Design",
+      fieldOfStudy: "User Experience",
+      startDate: "2019-09-01",
+      endDate: "2021-06-30",
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    }
+  ])
+  experience_upsertMany(data: [
+    {
+      userId: "b452875d-3d44-48f8-a1c2-39c4f74659a8",
+      companyName: "Tech Solutions Inc.",
+      role: "Junior Developer",
+      startDate: "2022-07-01",
+      responsibilities: "Developed and maintained web applications.",
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    },
+    {
+      userId: "c876b2e1-4c63-4a7f-9b2c-8d5f1e0a2b3c",
+      companyName: "Creative Digital Agency",
+      role: "UX Intern",
+      startDate: "2021-07-01",
+      endDate: "2022-06-30",
+      responsibilities: "Assisted in user research and wireframing.",
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    }
+  ])
+  project_upsertMany(data: [
+    {
+      userId: "b452875d-3d44-48f8-a1c2-39c4f74659a8",
+      title: "Portfolio Website",
+      description: "A personal website to showcase projects and skills.",
+      technologiesUsed: ["React", "Node.js", "Firebase"],
+      projectUrl: "https://alicesmith.dev",
+      githubRepoUrl: "https://github.com/alicesmith/portfolio",
+      isFeatured: true,
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    },
+    {
+      userId: "c876b2e1-4c63-4a7f-9b2c-8d5f1e0a2b3c",
+      title: "Mobile App Redesign",
+      description: "Redesigned a popular mobile application for improved usability.",
+      technologiesUsed: ["Figma", "Sketch"],
+      isFeatured: true,
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    }
+  ])
+  skill_upsertMany(data: [
+    {
+      userId: "b452875d-3d44-48f8-a1c2-39c4f74659a8",
+      name: "JavaScript",
+      proficiency: "Expert",
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    },
+    {
+      userId: "b452875d-3d44-48f8-a1c2-39c4f74659a8",
+      name: "React",
+      proficiency: "Advanced",
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    },
+    {
+      userId: "c876b2e1-4c63-4a7f-9b2c-8d5f1e0a2b3c",
+      name: "Figma",
+      proficiency: "Expert",
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    },
+    {
+      userId: "c876b2e1-4c63-4a7f-9b2c-8d5f1e0a2b3c",
+      name: "User Research",
+      proficiency: "Advanced",
+      createdAt: "2023-07-01T08:00:00Z",
+      updatedAt: "2023-07-01T08:00:00Z"
+    }
+  ])
+}

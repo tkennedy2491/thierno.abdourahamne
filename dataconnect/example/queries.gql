@@ -1,0 +1,32 @@
+query ListAllUsers @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  users {
+    id
+    displayName
+    email
+    photoUrl
+  }
+}
+
+query GetMyProjects @auth(level: USER) {
+  projects(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    title
+    description
+    projectUrl
+    isFeatured
+  }
+}
+
+mutation CreateSkill($name: String!, $proficiency: String) @auth(level: USER) {
+  skill: skill_insert(data: {
+    user: {id_expr: "auth.uid"},
+    name: $name,
+    proficiency: $proficiency,
+    createdAt_expr: "request.time",
+    updatedAt_expr: "request.time"
+  })
+}
+
+mutation UpdateMyBio($bio: String!) @auth(level: USER) {
+  user_update(key: {id_expr: "auth.uid"}, data: {bio: $bio})
+}
