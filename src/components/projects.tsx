@@ -17,6 +17,7 @@ const categories = [
 export function Projects() {
   const [activeTab, setActiveTab] = useState('all');
   const atosLogo = PlaceHolderImages.find(img => img.id === 'atos-logo');
+  const cuberfitLogo = PlaceHolderImages.find(img => img.id === 'cuberfit-logo');
 
   const projects = [
     {
@@ -101,23 +102,14 @@ export function Projects() {
       id: 'project-5',
       title: 'Cuberfit',
       category: 'mobile',
-      icon: <div className="bg-[#2b3de2] px-8 py-5 rounded-2xl flex items-center gap-4 shadow-2xl scale-90">
-              <div className="w-14 h-14 relative">
-                <svg viewBox="0 0 100 100" className="w-full h-full">
-                  <path 
-                    d="M85,55 A35,35 0 1,1 35,25" 
-                    fill="none" 
-                    stroke="white" 
-                    strokeWidth="20"
-                    strokeLinecap="butt"
-                  />
-                  <path 
-                    d="M12,25 L80,25 L95,45 L40,45 Z" 
-                    fill="#5ea3e1"
-                  />
-                </svg>
-              </div>
-              <span className="text-4xl font-black text-white tracking-tighter">CUBERFIT</span>
+      icon: <div className="relative w-48 h-24">
+              <Image 
+                src={cuberfitLogo?.imageUrl || "/cuberfit.png"} 
+                alt="Cuberfit Logo" 
+                fill 
+                className="object-contain"
+                data-ai-hint="cuberfit logo"
+              />
             </div>,
     }
   ];

@@ -42,6 +42,12 @@
       "description": "Logo officiel Atos",
       "imageUrl": "/atos.png",
       "imageHint": "atos logo"
+    },
+    {
+      "id": "cuberfit-logo",
+      "description": "Logo officiel Cuberfit",
+      "imageUrl": "/cuberfit.png",
+      "imageHint": "cuberfit logo"
     }
   ]
 }
