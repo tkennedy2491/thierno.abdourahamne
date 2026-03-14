@@ -1,12 +1,11 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Download } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
-// Icônes de technologies épurées avec contre-rotation intégrée
 const TechIcons = {
   React: () => (
     <svg viewBox="-11.5 -10.23174 23 20.46348" className="w-10 h-10 fill-[#61dafb]">
@@ -166,11 +165,11 @@ const CustomDeveloperIcon = () => (
       <stop offset=".725" stopColor="#554138" stopOpacity="0" />
       <stop offset="1" stopColor="#554138" />
     </radialGradient>
-    <path d="M102.02 42.16c.79-1.08 1.06-2.81.67-4.38c-.31-1.26-1-2.21-1.95-2.7c.33-.46.93-1.5.94-2.96c.03-2.33-.94-4.03-2.97-5.19c.71-3.29-1.28-6.77-4.45-7.77c-.04-1.71-.78-3.4-2.06-4.65c-1.21-1.18-2.74-1.84-4.33-1.85c-.5-1.6-1.65-2.99-3.18-3.83c-1.47-.8-3.11-1.01-4.63-.59c-1.75-2.79-5.49-3.81-8.36-2.28c-1.73-1.77-4.41-2.39-6.73-1.53c-.25.1-.67.32-.97.49c-.3-.17-.71-.39-.97-.49c-2.32-.86-5-.24-6.73 1.53c-2.87-1.53-6.61-.51-8.36 2.28c-1.53-.42-3.16-.22-4.63.59c-1.53.84-2.68 2.22-3.18 3.83c-1.59.01-3.12.66-4.33 1.85c-1.27 1.25-2.02 2.93-2.06 4.65c-3.16 1-5.16 4.48-4.45 7.77c-2.02 1.16-3 2.86-2.97 5.19c.02 1.45.62 2.5.94 2.96c-.95.5-1.64 1.45-1.95 2.7c-.39 1.57-.12 3.3.67 4.38c-1.88 2.29-1.73 5.55.4 8.05c-.74 1.34-.98 2.89-.43 4.84c.79 2.51 2.84 2.88 2.84 2.88c-1.21 2.79.93 6.79 2.6 7.36c0 0 1.67-23.26 7.2-30.22c.59.59 1.7 1.67 3.86 1.23c1.88-.38 2.65-1.02 3.19-2.09c.18.94.7 1.81 1.54 2.4c1.71 1.2 4.1.79 5.31-.92c.13-.18.23-.38.32-.57c.46 1.57 1.54 2.81 3.27 3.05c1.71.23 3.32-.59 4.2-1.95c.4.67 1.57 2.34 3.7 2.34c2.14 0 3.38-1.67 3.78-2.34c.88 1.36 2.49 2.19 4.2 1.95c1.73-.24 2.74-1.48 3.2-3.05c.09.2.19.39.32.57a3.832 3.832 0 0 0 5.31.92a3.78 3.78 0 0 0 1.54-2.4c.53 1.06 1.48 2.26 4.15 1.95c2.09-.24 2.9-1.67 2.9-1.67c4.66 5.61 7.26 30.8 7.26 30.8c1.35-.49 3.09-3.94 3.14-6.99c1.4-.83 2.35-2.06 2.67-3.9c.33-1.84-.11-2.85-.85-4.19c2.15-2.5 2.3-5.76.42-8.05z" fill="url(#IconifyId17ecdb2904d178eab12264)" />
+    <path d="M102.02 42.16c.79-1.08 1.06-2.81.67-4.38c-.31-1.26-1-2.21-1.95-2.7c.33-.46.93-1.5.94-2.96c.03-2.33-.94-4.03-2.97-5.19c.71-3.29-1.28-6.77-4.45-7.77c-.04-1.71-.78-3.4-2.06-4.65c-1.21-1.18-2.74-1.84-4.33-1.85c-.5-1.6-1.65-2.99-3.18-3.83c-1.47-.8-3.11-1.01-4.63-.59c-1.75-2.79-5.49-3.81-8.36-2.28c-1.73-1.77-4.41-2.39-6.73-1.53c-.25.1-.67.32-.97.49c-.3-.17-.71-.39-.97-.49c-2.32-.86-5-.24-6.73 1.53c-2.87-1.53-6.61-.51-8.36 2.28c-1.53-.42-3.16-.22-4.63.59c-1.53.84-2.68 2.22-3.18 3.83c-1.59.01-3.12.66-4.33 1.85c-1.27 1.25-2.02 2.93-2.06 4.65c-3.16 1-5.16 4.48-4.45 7.77c-2.02 1.16-3 2.86-2.97 5.19c.02 1.45.62 2.5.94 2.96c-.95.5-1.64 1.45-1.95 2.7c-.39 1.57-.12 3.3.67 4.38c-1.88 2.29-1.73 5.55.4 8.05c-.74 1.34-.98 2.89-.43 4.84c.79 2.51 2.84 2.88 2.84 2.88c-1.21 2.79.93 6.79 2.6 7.36c0 0 1.67-23.26 7.2-30.22c.59.59 1.7 1.67 3.86 1.23c1.88-.38 2.65-1.02 3.19-2.09c.18.94.7 1.81 1.54 2.4c1.71 1.2 4.1.79(5.31-.92c.13-.18.23-.38.32-.57c.46 1.57 1.54 2.81 3.27 3.05c1.71.23 3.32-.59 4.2-1.95c.4.67 1.57 2.34 3.7 2.34c2.14 0 3.38-1.67 3.78-2.34c.88 1.36 2.49 2.19 4.2 1.95c1.73-.24 2.74-1.48 3.2-3.05c.09.2.19.39.32.57a3.832 3.832 0 0 0 5.31.92a3.78 3.78 0 0 0 1.54-2.4c.53 1.06 1.48 2.26 4.15 1.95c2.09-.24 2.9-1.67 2.9-1.67c4.66 5.61 7.26 30.8 7.26 30.8c1.35-.49 3.09-3.94 3.14-6.99c1.4-.83 2.35-2.06 2.67-3.9c.33-1.84-.11-2.85-.85-4.19c2.15-2.5 2.3-5.76.42-8.05z" fill="url(#IconifyId17ecdb2904d178eab12264)" />
   </svg>
 );
 
-// Cercle Extérieur (Infrastructure, Bases de données, Outils Cloud)
+// Cercle Extérieur
 const outerOrbitItems = [
   { icon: <TechIcons.AWS />, angle: 0 },
   { icon: <TechIcons.Azure />, angle: 30 },
@@ -186,7 +185,7 @@ const outerOrbitItems = [
   { icon: <TechIcons.Figma />, angle: 330 },
 ];
 
-// Cercle Intérieur (Core Tech, Languages, Frameworks)
+// Cercle Intérieur
 const innerOrbitItems = [
   { icon: <TechIcons.React />, angle: 0 },
   { icon: <TechIcons.NodeJS />, angle: 45 },
@@ -214,6 +213,7 @@ const cyclingWords = [
 
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -224,16 +224,14 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-28 pb-12 overflow-hidden bg-[#020617]">
-      {/* Éléments de fond décoratifs */}
       <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 -z-10 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3" />
 
       <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col items-start text-left">
-          {/* Badge Salut */}
           <div className="inline-flex flex-col items-center mb-8">
             <div className="px-5 py-2 rounded-full bg-[#1e293b]/60 border border-slate-700/50 backdrop-blur-sm shadow-xl flex items-center gap-2 mb-2">
-              <span className="text-sm font-bold text-white tracking-wide">Salut! 😉</span>
+              <span className="text-sm font-bold text-white tracking-wide">{t.hero.hi}</span>
             </div>
             <div className="flex gap-1">
                <div className="w-2 h-2 rounded-full bg-primary/40" />
@@ -243,12 +241,12 @@ export function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold font-headline mb-4 tracking-tight leading-tight">
-            Je suis <span className="text-white font-extrabold">Thierno Abdourahmane Diallo</span>
+            {t.hero.im} <span className="text-white font-extrabold">Thierno Abdourahmane Diallo</span>
           </h1>
           
           <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
-            <span className="text-[#f97316]">Développeur web</span> 
-            <span className="text-[#22c55e]">& mobile</span> 
+            <span className="text-[#f97316]">{t.hero.title1}</span> 
+            <span className="text-[#22c55e]">{t.hero.title2}</span> 
             <span 
               key={wordIndex} 
               className="text-white capitalize inline-block animate-in fade-in slide-in-from-bottom-2 duration-500"
@@ -258,56 +256,42 @@ export function Hero() {
           </h2>
 
           <div className="space-y-6 text-slate-300 text-lg leading-relaxed max-w-2xl mb-12">
+            <p>{t.hero.desc1}</p>
             <p>
-              Bienvenue sur mon portfolio ! J'espère que vous apprécierez votre visite. Je me spécialise dans le développement Back-End avec <span className="text-[#a78bfa] font-medium">Node.js, Express.js</span>, et le développement Front-End avec <span className="text-[#a78bfa] font-medium">React.js, React native (Expo) et Next.js</span>. J'ai travaillé sur divers projets, notamment des <span className="text-white font-bold">API E-Commerce, Management University, SaaS Vote en ligne et Billeterie</span> ainsi que la conception et le développement de sites web et applications mobiles modernes <span className="text-[#a78bfa] font-medium">React, React native (Expo) & Next</span>, et bien d'autres.
-            </p>
-            <p>
-              Passionné par l'apprentissage de nouvelles technologies, je suis toujours en quête de solutions innovantes. Merci d'avoir visité mon portfolio ! J'espère que mon travail vous plait. <span className="text-[#f97316] font-bold flex items-center">Bon code ! <CustomDeveloperIcon /></span>
+              {t.hero.desc2} <span className="text-[#f97316] font-bold flex items-center">{t.hero.bonCode} <CustomDeveloperIcon /></span>
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="px-10 bg-[#1e293b]/80 hover:bg-[#1e293b] border border-slate-700/50 text-white font-bold rounded-full h-14 transition-all backdrop-blur-md shadow-2xl">
               <Link href="#">
-                Mon CV <Download className="ml-2 w-4 h-4" />
+                {t.hero.cvBtn} <Download className="ml-2 w-4 h-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="px-10 border-slate-700 hover:bg-white/5 text-white font-bold rounded-full h-14 transition-all shadow-xl bg-transparent">
-              <Link href="#contact">Contactez-moi</Link>
+              <Link href="#contact">{t.hero.contactBtn}</Link>
             </Button>
           </div>
         </div>
 
-        {/* Roue de compétences avec Double Orbite */}
         <div className="relative flex items-center justify-center">
           <div className="relative w-[550px] h-[550px] flex items-center justify-center group">
-            
-            {/* Texte Central "Skills" */}
             <div className="relative z-20">
               <h3 className="text-9xl font-black italic text-white tracking-tighter select-none drop-shadow-[0_10px_30px_rgba(255,255,255,0.15)] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
-                Skills
+                {t.hero.skillsCenter}
               </h3>
             </div>
 
-            {/* Orbites décoratives (Lignes fines) */}
             <div className="absolute inset-0 border border-slate-800/40 rounded-full scale-100" />
             <div className="absolute inset-0 border border-slate-800/40 rounded-full scale-[0.62]" />
 
-            {/* Cercle EXTÉRIEUR (Gravitation lente) */}
             <div className="absolute inset-0 animate-orbit group-hover:[animation-play-state:paused]">
               {outerOrbitItems.map((item, index) => {
                 const radius = 275; 
                 const x = Math.cos((item.angle * Math.PI) / 180) * radius;
                 const y = Math.sin((item.angle * Math.PI) / 180) * radius;
-
                 return (
-                  <div
-                    key={index}
-                    className="absolute top-1/2 left-1/2"
-                    style={{
-                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                    }}
-                  >
+                  <div key={index} className="absolute top-1/2 left-1/2" style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}>
                     <div className="animate-counter-orbit group-hover:[animation-play-state:paused]">
                       <div className="transition-all duration-300 hover:scale-125 cursor-pointer flex items-center justify-center">
                         {item.icon}
@@ -318,21 +302,13 @@ export function Hero() {
               })}
             </div>
 
-            {/* Cercle INTÉRIEUR (Gravitation lente) */}
             <div className="absolute inset-0 animate-orbit group-hover:[animation-play-state:paused]">
               {innerOrbitItems.map((item, index) => {
                 const radius = 170; 
                 const x = Math.cos((item.angle * Math.PI) / 180) * radius;
                 const y = Math.sin((item.angle * Math.PI) / 180) * radius;
-
                 return (
-                  <div
-                    key={index}
-                    className="absolute top-1/2 left-1/2"
-                    style={{
-                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                    }}
-                  >
+                  <div key={index} className="absolute top-1/2 left-1/2" style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}>
                     <div className="animate-counter-orbit group-hover:[animation-play-state:paused]">
                       <div className="transition-all duration-300 hover:scale-125 cursor-pointer flex items-center justify-center">
                         {item.icon}
@@ -342,8 +318,6 @@ export function Hero() {
                 );
               })}
             </div>
-
-            {/* Effet de lueur centrale */}
             <div className="absolute inset-0 bg-primary/5 rounded-full blur-[120px]" />
           </div>
         </div>

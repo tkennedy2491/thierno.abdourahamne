@@ -1,22 +1,29 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Code2, Globe, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-
-const navLinks = [
-  { name: 'Accueil', href: '#home' },
-  { name: 'Compétences', href: '#skills' },
-  { name: 'Projets', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
-];
+import { useLanguage } from '@/context/language-context';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { name: t.nav.home, href: '#home' },
+    { name: t.nav.skills, href: '#skills' },
+    { name: t.nav.projects, href: '#projects' },
+    { name: t.nav.contact, href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +49,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -52,19 +59,58 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 text-white">
-            <Link href="#contact">Me contacter</Link>
-          </Button>
+          
+          <div className="flex items-center gap-2">
+            <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 text-white">
+              <Link href="#contact">{t.nav.contactBtn}</Link>
+            </Button>
+
+            {/* Language Selector */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="gap-2 border-border/50 bg-background/50 backdrop-blur-sm">
+                  <Globe className="w-4 h-4" />
+                  <span className="uppercase text-xs font-bold">{language}</span>
+                  <ChevronDown className="w-3 h-3 opacity-50" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border-border">
+                <DropdownMenuItem onClick={() => setLanguage('fr')} className="gap-2 cursor-pointer">
+                  <span className="text-sm font-medium">Français</span>
+                  {language === 'fr' && <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto" />}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('en')} className="gap-2 cursor-pointer">
+                  <span className="text-sm font-medium">English</span>
+                  {language === 'en' && <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto" />}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground p-1"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+           {/* Language Selector Mobile */}
+           <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="w-9 h-9">
+                  <Globe className="w-5 h-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLanguage('fr')}>Français</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('en')}>English</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+          <button
+            className="text-foreground p-1"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -86,7 +132,7 @@ export function Navbar() {
             </Link>
           ))}
           <Button asChild variant="default" className="w-full mt-2 text-white">
-            <Link href="#contact" onClick={() => setIsOpen(false)}>Me contacter</Link>
+            <Link href="#contact" onClick={() => setIsOpen(false)}>{t.nav.contactBtn}</Link>
           </Button>
         </div>
       </div>
