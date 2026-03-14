@@ -78,6 +78,66 @@ export const translations = {
     projects: {
       categories: { all: 'Tous les projets', web: 'Web', mobile: 'Mobile' },
       loadMore: 'Charger plus de projets',
+      details: 'Détails du projet',
+      realizations: 'Réalisations clés',
+      tech: 'Technologies',
+      items: {
+        okooltrip: {
+          title: 'OkoolTrip',
+          date: 'Décembre 2023 - Présent',
+          desc: 'Plateforme complète de billetterie et de gestion de voyages.',
+          tasks: [
+            "Conception de l'architecture Full-Stack avec Next.js et Node.js",
+            "Mise en place d'un système de réservation en temps réel",
+            "Intégration de passerelles de paiement sécurisées",
+            "Développement d'un tableau de bord administrateur pour la gestion des flux"
+          ]
+        },
+        atos: {
+          title: 'Atos (Projet Mobile)',
+          date: 'Juin 2023 - Novembre 2023',
+          desc: "Application mobile hybride développée pour la transformation numérique d'un client grand compte.",
+          tasks: [
+            "Développement de l'interface utilisateur mobile avec React Native",
+            "Consommation d'APIs complexes pour le reporting en temps réel",
+            "Mise en place de capacités hors-ligne avec synchronisation",
+            "Optimisation des performances de rendu mobile"
+          ]
+        },
+        fegnseo: {
+          title: 'FegnSEO',
+          date: 'Janvier 2024 - Avril 2024',
+          desc: "SaaS d'audit et de suivi SEO automatisé pour les sites web.",
+          tasks: [
+            "Développement d'algorithmes d'analyse de performance SEO",
+            "Automatisation du crawling de pages web",
+            "Génération automatique de rapports PDF détaillés",
+            "Intégration de graphiques de données interactifs avec Recharts"
+          ]
+        },
+        assuraf: {
+          title: 'Assuraf',
+          date: 'Septembre 2023 - Janvier 2024',
+          desc: 'Solution digitale de souscription d\'assurance en ligne simplifiée.',
+          tasks: [
+            "Développement de formulaires de souscription dynamiques complexes",
+            "Gestion des documents justificatifs via stockage Cloud",
+            "Mise en place d'un moteur de calcul de devis instantané",
+            "Architecture API RESTful avec Express.js"
+          ]
+        },
+        cuberfit: {
+          title: 'Cuberfit',
+          date: 'Mars 2024 - Présent',
+          desc: 'Application mobile de coaching et suivi fitness personnalisé.',
+          tasks: [
+            "Développement de l'application mobile sous React Native / Expo",
+            "Système de suivi d'exercices avec historisation des données",
+            "Intégration de notifications push pour l'engagement utilisateur",
+            "Architecture Backend temps réel avec Socket.io"
+          ]
+        }
+      }
     },
     contact: {
       title: 'Collaborons Ensemble',
@@ -207,6 +267,66 @@ export const translations = {
     projects: {
       categories: { all: 'All Projects', web: 'Web', mobile: 'Mobile' },
       loadMore: 'Load more projects',
+      details: 'Project Details',
+      realizations: 'Key Realizations',
+      tech: 'Technologies',
+      items: {
+        okooltrip: {
+          title: 'OkoolTrip',
+          date: 'December 2023 - Present',
+          desc: 'Full ticketing and trip management platform.',
+          tasks: [
+            "Full-Stack architecture design with Next.js and Node.js",
+            "Real-time booking system implementation",
+            "Secure payment gateway integration",
+            "Admin dashboard development for flow management"
+          ]
+        },
+        atos: {
+          title: 'Atos (Mobile Project)',
+          date: 'June 2023 - November 2023',
+          desc: "Hybrid mobile application developed for a major client's digital transformation.",
+          tasks: [
+            "Mobile UI development with React Native",
+            "Complex API consumption for real-time reporting",
+            "Offline capability with sync implementation",
+            "Mobile rendering performance optimization"
+          ]
+        },
+        fegnseo: {
+          title: 'FegnSEO',
+          date: 'January 2024 - April 2024',
+          desc: "Automated SEO audit and monitoring SaaS for websites.",
+          tasks: [
+            "SEO performance analysis algorithms development",
+            "Web page crawling automation",
+            "Automatic detailed PDF report generation",
+            "Interactive data charts integration with Recharts"
+          ]
+        },
+        assuraf: {
+          title: 'Assuraf',
+          date: 'September 2023 - January 2024',
+          desc: 'Simplified online insurance subscription digital solution.',
+          tasks: [
+            "Complex dynamic subscription forms development",
+            "Supporting documents management via Cloud storage",
+            "Instant quote calculation engine implementation",
+            "RESTful API architecture with Express.js"
+          ]
+        },
+        cuberfit: {
+          title: 'Cuberfit',
+          date: 'March 2024 - Present',
+          desc: 'Personalized mobile coaching and fitness tracking application.',
+          tasks: [
+            "Mobile app development using React Native / Expo",
+            "Exercise tracking system with data logging",
+            "Push notifications integration for user engagement",
+            "Real-time Backend architecture with Socket.io"
+          ]
+        }
+      }
     },
     contact: {
       title: "Let's Collaborate",
@@ -248,7 +368,7 @@ export const translations = {
       welcome: 'Hi! How can I help you today?',
       back: 'Back to questions',
       q1: 'What is your tech stack?',
-      a1: 'I specialize in TypeScript, React, Next.js, Node.js, and React Native.',
+      a1: 'I specialize in TypeScript, React, Next.js, Node.js and React Native.',
       q2: 'Are you available?',
       a2: 'Yes, I am currently open to new opportunities for freelance or full-time roles.',
       q3: 'How to contact you?',

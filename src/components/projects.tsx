@@ -5,6 +5,16 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/app/lib/placeholder-images';
+import { useLanguage } from '@/context/language-context';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Badge } from '@/components/ui/badge';
+import { Calendar, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 const categories = [
   { id: 'all', name: 'Tous les projets' },
@@ -14,13 +24,18 @@ const categories = [
 
 export function Projects() {
   const [activeTab, setActiveTab] = useState('all');
+  const { t } = useLanguage();
   const cuberfitLogo = PlaceHolderImages.find(img => img.id === 'cuberfit-logo');
 
   const projects = [
     {
-      id: 'project-1',
+      id: 'okooltrip',
       title: 'OkoolTrip',
       category: 'web',
+      date: t.projects.items.okooltrip.date,
+      desc: t.projects.items.okooltrip.desc,
+      tasks: t.projects.items.okooltrip.tasks,
+      tech: ['Next.js', 'Node.js', 'Prisma', 'PostgreSQL'],
       icon: <div className="flex items-center gap-1 scale-90">
               <div className="flex items-center font-black text-5xl tracking-tighter">
                 <span className="text-slate-900">Ok</span>
@@ -46,21 +61,33 @@ export function Projects() {
             </div>,
     },
     {
-      id: 'project-2',
+      id: 'atos',
       title: 'Atos',
       category: 'mobile',
+      date: t.projects.items.atos.date,
+      desc: t.projects.items.atos.desc,
+      tasks: t.projects.items.atos.tasks,
+      tech: ['React Native', 'TypeScript', 'REST API'],
       icon: <h3 className="text-5xl font-bold text-[#0066a1] tracking-tighter">Atos</h3>,
     },
     {
-      id: 'project-3',
+      id: 'fegnseo',
       title: 'FegnSEO',
       category: 'web',
+      date: t.projects.items.fegnseo.date,
+      desc: t.projects.items.fegnseo.desc,
+      tasks: t.projects.items.fegnseo.tasks,
+      tech: ['React', 'Python', 'Recharts', 'Node.js'],
       icon: <h3 className="text-2xl font-black text-blue-600 tracking-tighter">Fegn<span className="text-blue-400 italic">SEO</span></h3>,
     },
     {
-      id: 'project-4',
+      id: 'assuraf',
       title: 'Assuraf',
       category: 'web',
+      date: t.projects.items.assuraf.date,
+      desc: t.projects.items.assuraf.desc,
+      tasks: t.projects.items.assuraf.tasks,
+      tech: ['Express.js', 'React', 'MongoDB', 'Cloud Storage'],
       icon: <div className="flex items-center gap-1">
               <div className="relative w-14 h-14">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -88,9 +115,13 @@ export function Projects() {
             </div>,
     },
     {
-      id: 'project-5',
+      id: 'cuberfit',
       title: 'Cuberfit',
       category: 'mobile',
+      date: t.projects.items.cuberfit.date,
+      desc: t.projects.items.cuberfit.desc,
+      tasks: t.projects.items.cuberfit.tasks,
+      tech: ['React Native', 'Expo', 'Socket.io', 'Node.js'],
       icon: <div className="relative w-48 h-24">
               <Image 
                 src={cuberfitLogo?.imageUrl || "/cuberfit.png"} 
@@ -123,27 +154,75 @@ export function Projects() {
                   : "text-slate-500 hover:text-slate-700"
               )}
             >
-              {cat.name}
+              {cat.id === 'all' ? t.projects.categories.all : (cat.id === 'web' ? t.projects.categories.web : t.projects.categories.mobile)}
             </button>
           ))}
         </div>
 
         <div className="grid md:grid-cols-2 gap-x-32 gap-y-16 max-w-5xl mx-auto">
           {filteredProjects.map((project) => (
-            <div 
-              key={project.id} 
-              className="group relative"
-            >
-              <div className="aspect-[1.4/1] bg-[#dee2ff] rounded-[2.5rem] flex items-center justify-center transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-indigo-200/50 group-hover:-translate-y-2 cursor-pointer overflow-hidden">
-                <div className="transition-transform duration-500 group-hover:scale-110">
-                  {project.icon}
+            <Dialog key={project.id}>
+              <DialogTrigger asChild>
+                <div className="group relative">
+                  <div className="aspect-[1.4/1] bg-[#dee2ff] rounded-[2.5rem] flex items-center justify-center transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-indigo-200/50 group-hover:-translate-y-2 cursor-pointer overflow-hidden">
+                    <div className="transition-transform duration-500 group-hover:scale-110">
+                      {project.icon}
+                    </div>
+                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <div className="mt-4 px-4 opacity-0 group-hover:opacity-100 transition-opacity text-center">
+                    <span className="font-bold text-slate-700">{project.title}</span>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="mt-4 px-4 opacity-0 group-hover:opacity-100 transition-opacity text-center">
-                <span className="font-bold text-slate-700">{project.title}</span>
-              </div>
-            </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl bg-card border-border sm:rounded-[2rem]">
+                <DialogHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="outline" className="text-primary border-primary/30 uppercase text-[10px] tracking-widest">{project.category}</Badge>
+                    <div className="flex items-center gap-1.5 text-xs text-muted-foreground ml-auto">
+                      <Calendar className="w-3 h-3" />
+                      {project.date}
+                    </div>
+                  </div>
+                  <DialogTitle className="text-3xl font-black tracking-tight">{project.title}</DialogTitle>
+                </DialogHeader>
+                
+                <div className="mt-6 space-y-8">
+                  <div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {project.desc}
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h4 className="font-bold text-lg flex items-center gap-2">
+                      <ChevronRight className="w-5 h-5 text-primary" /> {t.projects.realizations}
+                    </h4>
+                    <ul className="grid gap-3">
+                      {project.tasks.map((task, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm text-slate-300 bg-muted/30 p-3 rounded-xl border border-border/50">
+                          <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                          {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h4 className="font-bold text-lg flex items-center gap-2">
+                      <ChevronRight className="w-5 h-5 text-primary" /> {t.projects.tech}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((skill) => (
+                        <Badge key={skill} variant="secondary" className="px-3 py-1 rounded-lg bg-primary/10 text-primary border-none font-medium">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
 
@@ -151,7 +230,7 @@ export function Projects() {
           <Button 
             className="bg-[#ff5a60] hover:bg-[#ff454b] text-white font-bold rounded-full px-12 h-14 text-lg shadow-lg shadow-red-200 transition-all hover:scale-105 active:scale-95"
           >
-            Charger plus de projets
+            {t.projects.loadMore}
           </Button>
         </div>
       </div>
