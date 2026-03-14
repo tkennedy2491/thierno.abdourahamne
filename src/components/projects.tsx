@@ -2,12 +2,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ExternalLink, Github, Monitor, Smartphone, GraduationCap, Brain, Zap, Music } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const categories = [
-  { id: 'all', name: 'All Projects' },
+  { id: 'all', name: 'Tous les projets' },
   { id: 'web', name: 'Web' },
   { id: 'mobile', name: 'Mobile' },
 ];
@@ -120,13 +120,9 @@ export function Projects() {
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               
-              {/* Optionnel: Titre discret en dessous (comme l'image est très minimaliste, on peut le masquer ou l'ajouter) */}
-              <div className="mt-4 px-4 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+              {/* Titre discret visible au survol pour garder le contexte */}
+              <div className="mt-4 px-4 opacity-0 group-hover:opacity-100 transition-opacity text-center">
                 <span className="font-bold text-slate-700">{project.title}</span>
-                <div className="flex gap-3">
-                  <Github className="w-4 h-4 text-slate-400 hover:text-primary cursor-pointer" />
-                  <ExternalLink className="w-4 h-4 text-slate-400 hover:text-primary cursor-pointer" />
-                </div>
               </div>
             </div>
           ))}
@@ -137,7 +133,7 @@ export function Projects() {
           <Button 
             className="bg-[#ff5a60] hover:bg-[#ff454b] text-white font-bold rounded-full px-12 h-14 text-lg shadow-lg shadow-red-200 transition-all hover:scale-105 active:scale-95"
           >
-            Load more projects
+            Charger plus de projets
           </Button>
         </div>
       </div>
