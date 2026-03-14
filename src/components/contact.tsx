@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -9,6 +10,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { aiChatSuggestion } from '@/ai/flows/ai-chat-suggestion';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/context/language-context';
+import { sendContactEmail } from '@/app/actions/email-actions';
 
 export function Contact() {
   const { t } = useLanguage();
@@ -50,14 +52,24 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulation d'appel API
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    const result = await sendContactEmail(formData);
+    
     setLoading(false);
-    toast({
-      title: t.contact.success,
-      description: t.contact.successDesc,
-    });
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    
+    if (result.success) {
+      toast({
+        title: t.contact.success,
+        description: t.contact.successDesc,
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Erreur lors de l'envoi",
+        description: result.error || "Une erreur est survenue. Veuillez réessayer.",
+      });
+    }
   };
 
   return (

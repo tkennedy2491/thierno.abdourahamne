@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -7,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/context/language-context';
+import { subscribeNewsletter } from '@/app/actions/email-actions';
 
 export function Footer() {
   const { toast } = useToast();
@@ -28,15 +30,22 @@ export function Footer() {
     if (!email) return;
 
     setLoading(true);
-    // Simulation d'envoi
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const result = await subscribeNewsletter(email);
     setLoading(false);
 
-    toast({
-      title: t.footer.newsletterSuccess,
-      description: t.footer.newsletterSuccessDesc,
-    });
-    setEmail('');
+    if (result.success) {
+      toast({
+        title: t.footer.newsletterSuccess,
+        description: t.footer.newsletterSuccessDesc,
+      });
+      setEmail('');
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Erreur",
+        description: "Impossible de s'inscrire pour le moment.",
+      });
+    }
   };
 
   return (
