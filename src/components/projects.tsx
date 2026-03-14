@@ -74,7 +74,6 @@ const projects = [
     category: 'mobile',
     icon: <div className="relative w-24 h-24 flex items-center justify-center">
             <svg viewBox="0 0 100 100" className="w-20 h-20">
-              {/* Arc de cercle inférieur (Bleu marine foncé) */}
               <path 
                 d="M25,45 A30,30 0 1,0 75,45" 
                 fill="none" 
@@ -82,7 +81,6 @@ const projects = [
                 strokeWidth="18" 
                 strokeLinecap="round"
               />
-              {/* Barre supérieure inclinée (Bleu vif) */}
               <path 
                 d="M15,15 L70,15 L85,35 L30,35 Z" 
                 fill="#0ea5e9"
@@ -92,15 +90,17 @@ const projects = [
   },
   {
     id: 'project-6',
-    title: 'SHAP',
+    title: 'Atos',
     category: 'mobile',
-    icon: <div className="relative">
-            <span className="text-4xl font-black italic text-indigo-900 tracking-tighter">SHAP</span>
-            <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col gap-0.5">
-              <div className="w-3 h-0.5 bg-indigo-400" />
-              <div className="w-4 h-0.5 bg-indigo-400" />
-              <div className="w-2 h-0.5 bg-indigo-400" />
+    icon: <div className="flex items-center">
+            <span className="text-5xl font-bold text-[#0066a1] tracking-tighter">At</span>
+            <div className="w-10 h-10 mx-[-2px] relative translate-y-1">
+              <svg viewBox="0 0 100 100" className="w-full h-full fill-[#0066a1]">
+                <path d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C55,95 60,94 65,92 C55,85 50,70 50,50 C50,30 55,15 65,8 C60,6 55,5 50,5 Z" />
+                <path d="M50,5 C75,5 95,25 95,50 C95,75 75,95 50,95 C45,95 40,94 35,92 C45,85 50,70 50,50 C50,30 45,15 35,8 C40,6 45,5 50,5 Z" />
+              </svg>
             </div>
+            <span className="text-5xl font-bold text-[#0066a1] tracking-tighter uppercase">s</span>
           </div>,
   }
 ];
