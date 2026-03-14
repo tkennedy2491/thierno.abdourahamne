@@ -38,7 +38,7 @@ export const translations = {
     },
     services: {
       title: 'Services et Expertise',
-      subtitle: 'Des Solutions Complètes pour les Entreprises Modernes',
+      subtitle: 'Des Solutions Completes pour les Entreprises Modernes',
       desc: 'De la conception au déploiement, je propose des services de développement complets alliant excellence technique et valeur ajoutée pour votre entreprise.',
       s1: { title: 'Conseil Technique et Stratégie', desc: "Conseil technologique stratégique pour startups et entreprises. Accompagnement expert sur le choix de stack technique, la conception d'architecture et les solutions évolutives." },
       s2: { title: 'Développement Web Full-Stack', desc: "Développement d'applications web de bout en bout avec React, Next.js, TypeScript et Node.js. Création de plateformes réactives, rapides et sécurisées." },
@@ -70,6 +70,9 @@ export const translations = {
       s_git: "Contrôle de version avec Git pour un travail collaboratif.",
       s_github: "Hébergement de code et workflows CI/CD GitHub Actions.",
       s_aws: "Services Cloud Amazon pour l'infrastructure et l'hébergement.",
+      s_azure: "Expertise Microsoft Azure pour les solutions cloud hybrides.",
+      s_ai: "Intégration d'IA générative et de modèles LLM avancés.",
+      s_data: "Ingénierie et architecture de données haute performance.",
       s_socket: "Communication bidirectionnelle temps réel pour apps interactives.",
     },
     projects: {
@@ -196,6 +199,9 @@ export const translations = {
       s_git: "Version control with Git for collaborative work.",
       s_github: "Code hosting and GitHub Actions CI/CD workflows.",
       s_aws: "Amazon Cloud Services for infrastructure and hosting.",
+      s_azure: "Microsoft Azure expertise for hybrid cloud solutions.",
+      s_ai: "Integration of generative AI and advanced LLM models.",
+      s_data: "High-performance data engineering and architecture.",
       s_socket: "Real-time bidirectional communication for interactive apps.",
     },
     projects: {
