@@ -15,11 +15,29 @@ const categories = [
 const projects = [
   {
     id: 'project-1',
-    title: 'Nexus E-Commerce',
+    title: 'OkoolTrip',
     category: 'web',
-    icon: <div className="w-16 h-16 rounded-full bg-orange-400 flex items-center justify-center border-4 border-white shadow-lg">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <div className="w-1 h-4 bg-orange-400 rotate-12 rounded-full" />
+    icon: <div className="flex items-center gap-1 scale-90">
+            <div className="flex items-center font-black text-5xl tracking-tighter">
+              <span className="text-slate-900">Ok</span>
+              <div className="flex items-center -mx-1.5 translate-y-[2px]">
+                <svg viewBox="0 0 100 60" className="w-16 h-10 fill-none stroke-slate-900 stroke-[12]" style={{ strokeLinecap: 'round' }}>
+                  <path d="M30,30 A18,18 0 1,0 66,30 A18,18 0 1,0 30,30 M54,30 A18,18 0 1,1 90,30 A18,18 0 1,1 54,30" />
+                </svg>
+              </div>
+              <span className="text-slate-900">l</span>
+              <div className="flex items-baseline">
+                <span className="text-[#f97316]">Tr</span>
+                <div className="relative inline-flex flex-col items-center">
+                  <div className="w-2.5 h-2.5 bg-slate-900 rounded-full absolute -top-3" />
+                  <span className="text-[#f97316]">i</span>
+                </div>
+                <span className="text-[#f97316]">p</span>
+              </div>
+            </div>
+            <div className="ml-4 w-14 h-16 bg-[#f97316] rounded-2xl relative flex items-center justify-center shadow-lg">
+              <div className="absolute -top-2 w-6 h-4 border-t-4 border-x-4 border-[#f97316] rounded-t-md" />
+              <div className="w-8 h-4 border-b-4 border-white rounded-full mt-2" />
             </div>
           </div>,
   },
