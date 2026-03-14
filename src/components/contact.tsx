@@ -116,7 +116,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-muted-foreground">Email Direct</p>
-                  <p className="font-bold">thierno.diallo@example.com</p>
+                  <p className="font-bold">thierno.241991@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

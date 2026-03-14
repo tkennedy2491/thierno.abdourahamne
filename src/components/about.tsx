@@ -52,7 +52,7 @@ export function About() {
               </div>
               <div>
                 <h4 className="font-bold text-foreground mb-1">Email</h4>
-                <p className="text-muted-foreground">thierno.diallo@example.com</p>
+                <p className="text-muted-foreground">thierno.241991@gmail.com</p>
               </div>
               <div>
                 <h4 className="font-bold text-foreground mb-1">Spécialité</h4>
