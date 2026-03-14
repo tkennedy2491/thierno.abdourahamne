@@ -110,6 +110,19 @@ export const translations = {
       serv3: 'Applications React/Next.js',
       serv4: 'Intégration API',
       serv5: 'Optimisation de performance',
+    },
+    chatbot: {
+      title: 'Assistant Thierno',
+      welcome: 'Bonjour ! Comment puis-je vous aider ?',
+      back: 'Retour aux questions',
+      q1: 'Quelle est votre stack technique ?',
+      a1: 'Je suis spécialisé en TypeScript, React, Next.js, Node.js et React Native.',
+      q2: 'Êtes-vous disponible ?',
+      a2: 'Oui, je suis actuellement ouvert à de nouvelles opportunités en freelance ou en CDI.',
+      q3: 'Comment vous contacter ?',
+      a3: 'Vous pouvez utiliser le formulaire de contact sur ce site ou m\'envoyer un mail à thierno.241991@gmail.com.',
+      q4: 'Où êtes-vous basé ?',
+      a4: 'Je suis basé à Dakar, Sénégal, et je travaille principalement en remote.',
     }
   },
   en: {
@@ -223,6 +236,19 @@ export const translations = {
       serv3: 'React/Next.js Applications',
       serv4: 'API Integration',
       serv5: 'Performance Optimization',
+    },
+    chatbot: {
+      title: 'Thierno Assistant',
+      welcome: 'Hi! How can I help you today?',
+      back: 'Back to questions',
+      q1: 'What is your tech stack?',
+      a1: 'I specialize in TypeScript, React, Next.js, Node.js, and React Native.',
+      q2: 'Are you available?',
+      a2: 'Yes, I am currently open to new opportunities for freelance or full-time roles.',
+      q3: 'How to contact you?',
+      a3: 'You can use the contact form on this site or email me directly at thierno.241991@gmail.com.',
+      q4: 'Where are you based?',
+      a4: 'I am based in Dakar, Senegal, and I work mostly remotely.',
     }
   }
 };

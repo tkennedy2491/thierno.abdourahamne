@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Lightbulb, Code2, Smartphone, MessageCircle, Cloud, Zap, ShieldCheck, Megaphone, Search, Wrench } from 'lucide-react';
+import { Code2, Smartphone, Cloud, Megaphone, Search, Wrench } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 
 export function Services() {
@@ -137,12 +137,6 @@ export function Services() {
             </p>
           </div>
         </div>
-      </div>
-
-      <div className="fixed bottom-10 right-10 z-[60]">
-        <button className="bg-gradient-to-br from-[#6366f1] to-[#a855f7] p-5 rounded-full shadow-[0_10px_40px_rgba(99,102,241,0.5)] cursor-pointer hover:scale-110 active:scale-95 transition-all group">
-          <MessageCircle className="w-8 h-8 text-white group-hover:rotate-12 transition-transform" />
-        </button>
       </div>
     </section>
   );

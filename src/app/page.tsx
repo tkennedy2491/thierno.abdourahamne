@@ -1,4 +1,3 @@
-
 import { Navbar } from '@/components/navbar';
 import { Hero } from '@/components/hero';
 import { CodeShowcase } from '@/components/code-showcase';
@@ -7,6 +6,7 @@ import { Services } from '@/components/services';
 import { Projects } from '@/components/projects';
 import { Contact } from '@/components/contact';
 import { Footer } from '@/components/footer';
+import { ChatBot } from '@/components/chatbot';
 import { Toaster } from '@/components/ui/toaster';
 
 export default function Home() {
@@ -22,6 +22,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ChatBot />
       <Toaster />
     </div>
   );
