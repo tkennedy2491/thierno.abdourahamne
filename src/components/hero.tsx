@@ -1,12 +1,12 @@
 
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Download } from 'lucide-react';
 
-// Icônes de technologies épurées
+// Icônes de technologies épurées avec contre-rotation intégrée
 const TechIcons = {
   React: () => (
     <svg viewBox="-11.5 -10.23174 23 20.46348" className="w-10 h-10 fill-[#61dafb]">
@@ -168,7 +168,30 @@ const innerOrbitItems = [
   { icon: <TechIcons.Next />, angle: 315 },
 ];
 
+const cyclingWords = [
+  'backend',
+  'frontend',
+  'fullstack',
+  'javascript',
+  'nextjs',
+  'angular',
+  'reactjs',
+  'react native',
+  'asp dotnet',
+  'mongo db',
+  'postgres'
+];
+
 export function Hero() {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % cyclingWords.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-28 pb-12 overflow-hidden bg-[#020617]">
       {/* Éléments de fond décoratifs */}
@@ -194,7 +217,7 @@ export function Hero() {
           </h1>
           
           <h2 className="text-2xl md:text-3xl font-bold mb-8">
-            <span className="text-[#f97316]">Développeur web</span> <span className="text-[#22c55e]">& mobile</span> <span className="text-white">Typescript</span>
+            <span className="text-[#f97316]">Développeur web</span> <span className="text-[#22c55e]">& mobile</span> <span className="text-white capitalize transition-all duration-300">{cyclingWords[wordIndex]}</span>
           </h2>
 
           <div className="space-y-6 text-slate-300 text-lg leading-relaxed max-w-2xl mb-12">
