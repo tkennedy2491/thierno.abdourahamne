@@ -50,7 +50,20 @@ const aiChatSuggestionFlow = ai.defineFlow(
     outputSchema: AIChatSuggestionOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
-    return output!;
+    try {
+      const {output} = await prompt(input);
+      return output!;
+    } catch (error) {
+      console.error("Gemini API Error (Quota or Network):", error);
+      // Fallback suggestions in French when the API is exhausted
+      return {
+        suggestions: [
+          "Bonjour Thierno, j'aimerais discuter d'un projet web avec vous.",
+          "Seriez-vous disponible pour une mission en freelance ?",
+          "J'ai vu vos projets et j'apprécie beaucoup votre travail !",
+          "Quelles sont vos disponibilités pour un entretien technique ?"
+        ]
+      };
+    }
   }
 );
