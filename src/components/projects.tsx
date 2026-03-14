@@ -1,93 +1,144 @@
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { ExternalLink, Github } from 'lucide-react';
-import { PlaceHolderImages } from '@/app/lib/placeholder-images';
+"use client";
+
+import React, { useState } from 'react';
+import { ExternalLink, Github, Monitor, Smartphone, GraduationCap, Brain, Zap, Music } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
+
+const categories = [
+  { id: 'all', name: 'All Projects' },
+  { id: 'web', name: 'Web' },
+  { id: 'mobile', name: 'Mobile' },
+];
 
 const projects = [
   {
     id: 'project-1',
     title: 'Nexus E-Commerce',
-    category: 'Full Stack Development',
-    tags: ['Next.js', 'Stripe', 'PostgreSQL'],
-    description: 'A high-performance e-commerce platform with real-time inventory management and advanced analytics dashboard.',
+    category: 'web',
+    icon: <div className="w-16 h-16 rounded-full bg-orange-400 flex items-center justify-center border-4 border-white shadow-lg">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+              <div className="w-1 h-4 bg-orange-400 rotate-12 rounded-full" />
+            </div>
+          </div>,
   },
   {
     id: 'project-2',
-    title: 'Pulse Fitness Tracker',
-    category: 'Mobile Application',
-    tags: ['React Native', 'Firebase', 'D3.js'],
-    description: 'Comprehensive health monitoring app that integrates with wearables to provide actionable lifestyle insights.',
+    title: 'University Manager',
+    category: 'web',
+    icon: <div className="flex flex-col items-center">
+            <GraduationCap className="w-16 h-16 text-slate-700" strokeWidth={1.5} />
+            <div className="h-1.5 w-12 bg-orange-400 rounded-full mt-[-8px]" />
+          </div>,
   },
   {
     id: 'project-3',
-    title: 'Flow Task Manager',
-    category: 'SaaS Platform',
-    tags: ['TypeScript', 'Node.js', 'Socket.io'],
-    description: 'Collaborative task management tool designed for agile teams with integrated real-time chat and document sharing.',
+    title: 'FegnSEO',
+    category: 'web',
+    icon: <h3 className="text-2xl font-black text-blue-600 tracking-tighter">Fegn<span className="text-blue-400 italic">SEO</span></h3>,
+  },
+  {
+    id: 'project-4',
+    title: 'Parto AI',
+    category: 'web',
+    icon: <div className="border-2 border-black p-1 flex items-center gap-1 font-bold text-xs">
+            <span>PARTO</span>
+            <span className="bg-black text-white px-1">AI</span>
+          </div>,
+  },
+  {
+    id: 'project-5',
+    title: 'Texsoro',
+    category: 'mobile',
+    icon: <div className="flex items-center gap-1 text-[#7c3aed]">
+            <div className="flex gap-0.5">
+              <div className="w-1 h-4 bg-current rounded-full" />
+              <div className="w-1 h-6 bg-current rounded-full" />
+              <div className="w-1 h-3 bg-current rounded-full" />
+            </div>
+            <span className="text-2xl font-black tracking-tighter">Texsoro</span>
+          </div>,
+  },
+  {
+    id: 'project-6',
+    title: 'SHAP',
+    category: 'mobile',
+    icon: <div className="relative">
+            <span className="text-4xl font-black italic text-indigo-900 tracking-tighter">SHAP</span>
+            <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col gap-0.5">
+              <div className="w-3 h-0.5 bg-indigo-400" />
+              <div className="w-4 h-0.5 bg-indigo-400" />
+              <div className="w-2 h-0.5 bg-indigo-400" />
+            </div>
+          </div>,
   }
 ];
 
 export function Projects() {
+  const [activeTab, setActiveTab] = useState('all');
+
+  const filteredProjects = projects.filter(project => 
+    activeTab === 'all' || project.category === activeTab
+  );
+
   return (
     <section id="projects" className="py-24 bg-card/30">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-bold font-headline mb-4 tracking-tight">Featured Projects</h2>
-            <p className="text-muted-foreground max-w-xl text-lg leading-relaxed">
-              Selection of my most impactful works, showcasing technical depth and problem-solving capabilities.
-            </p>
-          </div>
-          <Button asChild variant="outline" className="w-fit border-primary/30 hover:border-primary">
-            <Link href="https://github.com" target="_blank">Explore Github</Link>
-          </Button>
+        {/* Navigation / Filtres */}
+        <div className="flex items-center gap-8 mb-16 overflow-x-auto pb-4 no-scrollbar">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveTab(cat.id)}
+              className={cn(
+                "text-sm md:text-base font-bold transition-all whitespace-nowrap",
+                activeTab === cat.id 
+                  ? "text-[#ff5a60] scale-110" 
+                  : "text-slate-500 hover:text-slate-700"
+              )}
+            >
+              {cat.name}
+            </button>
+          ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => {
-            const projectImage = PlaceHolderImages.find(img => img.id === project.id);
-            return (
-              <div key={project.id} className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
-                <div className="aspect-[4/3] relative overflow-hidden">
-                  <Image
-                    src={projectImage?.imageUrl || "https://picsum.photos/seed/project/800/600"}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    data-ai-hint="project screenshot"
-                  />
-                  <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <Button variant="secondary" size="icon" className="rounded-full bg-white text-black hover:bg-white/90">
-                      <Github className="w-5 h-5" />
-                    </Button>
-                    <Button variant="secondary" size="icon" className="rounded-full bg-white text-black hover:bg-white/90">
-                      <ExternalLink className="w-5 h-5" />
-                    </Button>
-                  </div>
+        {/* Grille de Projets */}
+        <div className="grid md:grid-cols-2 gap-x-32 gap-y-16 max-w-5xl mx-auto">
+          {filteredProjects.map((project) => (
+            <div 
+              key={project.id} 
+              className="group relative"
+            >
+              <div className="aspect-[1.4/1] bg-[#dee2ff] rounded-[2.5rem] flex items-center justify-center transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-indigo-200/50 group-hover:-translate-y-2 cursor-pointer overflow-hidden">
+                {/* Contenu de la carte (Logo) */}
+                <div className="transition-transform duration-500 group-hover:scale-110">
+                  {project.icon}
                 </div>
-                
-                <div className="p-8">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map(tag => (
-                      <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-muted-foreground line-clamp-2 mb-6">
-                    {project.description}
-                  </p>
-                  <Link href="#" className="inline-flex items-center text-sm font-bold text-primary group-hover:translate-x-1 transition-transform">
-                    View Details <ExternalLink className="ml-2 w-4 h-4" />
-                  </Link>
+
+                {/* Overlay au survol */}
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              
+              {/* Optionnel: Titre discret en dessous (comme l'image est très minimaliste, on peut le masquer ou l'ajouter) */}
+              <div className="mt-4 px-4 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+                <span className="font-bold text-slate-700">{project.title}</span>
+                <div className="flex gap-3">
+                  <Github className="w-4 h-4 text-slate-400 hover:text-primary cursor-pointer" />
+                  <ExternalLink className="w-4 h-4 text-slate-400 hover:text-primary cursor-pointer" />
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
+        </div>
+
+        {/* Bouton Charger Plus */}
+        <div className="mt-20 flex justify-center">
+          <Button 
+            className="bg-[#ff5a60] hover:bg-[#ff454b] text-white font-bold rounded-full px-12 h-14 text-lg shadow-lg shadow-red-200 transition-all hover:scale-105 active:scale-95"
+          >
+            Load more projects
+          </Button>
         </div>
       </div>
     </section>
