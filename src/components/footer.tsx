@@ -29,16 +29,34 @@ export function Footer() {
                 Développeur web passionné par la création d'applications web modernes et performantes, avec une expertise en React, Next.js et TypeScript.
               </p>
               <div className="flex items-center gap-4">
-                <a href="https://github.com" className="text-slate-400 hover:text-white transition-colors">
+                <a 
+                  href="https://github.com/tkennedy2491" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com" className="text-slate-400 hover:text-white transition-colors">
+                <a 
+                  href="https://www.linkedin.com/in/thierno-abdourahmane-diallo-1a1aa1158/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BBCx2wlBMQGGRHLdsmBvt9g%3D%3D" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://twitter.com" className="text-slate-400 hover:text-white transition-colors">
+                <a 
+                  href="https://x.com/Thierno241991" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="mailto:thierno.241991@gmail.com" className="text-slate-400 hover:text-white transition-colors">
+                <a 
+                  href="mailto:thierno.241991@gmail.com" 
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
