@@ -16,7 +16,6 @@ const categories = [
 
 export function Projects() {
   const [activeTab, setActiveTab] = useState('all');
-  const atosLogo = PlaceHolderImages.find(img => img.id === 'atos-logo');
   const cuberfitLogo = PlaceHolderImages.find(img => img.id === 'cuberfit-logo');
 
   const projects = [
@@ -52,15 +51,7 @@ export function Projects() {
       id: 'project-2',
       title: 'Atos',
       category: 'mobile',
-      icon: <div className="relative w-48 h-24">
-              <Image 
-                src={atosLogo?.imageUrl || "/atos.png"} 
-                alt="Atos Logo" 
-                fill 
-                className="object-contain"
-                data-ai-hint="atos logo"
-              />
-            </div>,
+      icon: <h3 className="text-5xl font-bold text-[#0066a1] tracking-tighter">Atos</h3>,
     },
     {
       id: 'project-3',
