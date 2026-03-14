@@ -24,11 +24,11 @@ export function CodeShowcase() {
           
           <div className="relative aspect-[16/10] overflow-hidden bg-[#010409]">
             <Image
-              src={codeImage?.imageUrl || "https://picsum.photos/seed/code/1200/800"}
+              src={codeImage?.imageUrl || "https://picsum.photos/seed/code-editor-typescript/1200/800"}
               alt="TypeScript Code Snippet"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90"
-              data-ai-hint="typescript syntax"
+              data-ai-hint="typescript code"
             />
             {/* Overlay pour simuler l'éclat de l'écran */}
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none"></div>

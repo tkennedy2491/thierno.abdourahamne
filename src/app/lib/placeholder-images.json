@@ -33,9 +33,9 @@
     },
     {
       "id": "code-snippet",
-      "description": "Close up of colorful TypeScript code syntax in a dark editor",
-      "imageUrl": "https://picsum.photos/seed/code-editor-dark/1200/800",
-      "imageHint": "typescript syntax"
+      "description": "TypeScript code editor with syntax highlighting",
+      "imageUrl": "https://picsum.photos/seed/typescript-code-dark/1200/800",
+      "imageHint": "typescript code"
     }
   ]
 }
