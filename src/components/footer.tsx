@@ -162,7 +162,7 @@ export function Footer() {
           {/* Footer Bottom */}
           <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-slate-500 text-sm">
-              © {new Date().getFullYear()} Développé avec passion. Tous droits réservés.
+              © {new Date().getFullYear()} Thierno Abdourahmane Diallo. Développé avec passion. Tous droits réservés.
             </p>
             
             <div className="flex items-center gap-1 text-slate-500 text-sm">
