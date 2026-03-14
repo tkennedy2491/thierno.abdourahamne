@@ -1,10 +1,10 @@
 'use server';
 /**
- * @fileOverview A Genkit flow for generating AI-powered contact message suggestions.
+ * @fileOverview Un flux Genkit pour générer des suggestions de messages de contact alimentées par l'IA.
  *
- * - aiChatSuggestion - A function that generates contact message suggestions based on portfolio content.
- * - AIChatSuggestionInput - The input type for the aiChatSuggestion function.
- * - AIChatSuggestionOutput - The return type for the aiChatSuggestion function.
+ * - aiChatSuggestion - Une fonction qui génère des suggestions de messages basées sur le contenu du portfolio.
+ * - AIChatSuggestionInput - Le type d'entrée pour la fonction aiChatSuggestion.
+ * - AIChatSuggestionOutput - Le type de retour pour la fonction aiChatSuggestion.
  */
 
 import {ai} from '@/ai/genkit';
@@ -13,12 +13,12 @@ import {z} from 'genkit';
 const AIChatSuggestionInputSchema = z.object({
   portfolioContent: z
     .string()
-    .describe('The entire portfolio content to base suggestions on.'),
+    .describe('Le contenu complet du portfolio sur lequel baser les suggestions.'),
 });
 export type AIChatSuggestionInput = z.infer<typeof AIChatSuggestionInputSchema>;
 
 const AIChatSuggestionOutputSchema = z.object({
-  suggestions: z.array(z.string()).describe('An array of AI-generated message suggestions.'),
+  suggestions: z.array(z.string()).describe('Un tableau de suggestions de messages générées par l\'IA.'),
 });
 export type AIChatSuggestionOutput = z.infer<typeof AIChatSuggestionOutputSchema>;
 
@@ -32,13 +32,15 @@ const prompt = ai.definePrompt({
   name: 'aiChatSuggestionPrompt',
   input: {schema: AIChatSuggestionInputSchema},
   output: {schema: AIChatSuggestionOutputSchema},
-  prompt: `You are an AI assistant designed to help visitors compose messages for a portfolio owner.
+  prompt: `Vous êtes un assistant IA conçu pour aider les visiteurs à rédiger des messages pour le propriétaire d'un portfolio.
 
-Based on the following portfolio content, generate 3 to 5 concise and engaging suggestions for a visitor to use when contacting the portfolio owner. The suggestions should reflect different common reasons for contact, such as job inquiries, collaboration opportunities, or general feedback.
+Sur la base du contenu du portfolio suivant, générez 3 à 5 suggestions concises et engageantes qu'un visiteur pourra utiliser pour contacter le propriétaire. Les suggestions doivent refléter différentes raisons courantes de contact, telles que des demandes d'emploi, des opportunités de collaboration ou des commentaires généraux.
 
-Ensure the suggestions are relevant to the provided portfolio content and are designed to help the visitor express their interest effectively. Format the output as a JSON array of strings.
+Assurez-vous que les suggestions sont pertinentes par rapport au contenu du portfolio fourni et sont conçues pour aider le visiteur à exprimer son intérêt efficacement. 
 
-Portfolio Content: {{{portfolioContent}}}`,
+IMPORTANT : Les suggestions doivent être impérativement rédigées en FRANÇAIS. Formatez la sortie sous forme d'un tableau JSON de chaînes de caractères.
+
+Contenu du Portfolio: {{{portfolioContent}}}`,
 });
 
 const aiChatSuggestionFlow = ai.defineFlow(

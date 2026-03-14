@@ -21,15 +21,17 @@ export function Contact() {
     message: ''
   });
 
-  const portfolioContent = "Alex Rivera is a Full Stack Developer specializing in React, Next.js, and Node.js. He has over 5 years of experience building e-commerce platforms, fitness trackers, and task management systems. He is interested in AI, IoT, and high-performance web applications.";
+  const portfolioContent = "Thierno Abdourahmane Diallo est un développeur Full Stack spécialisé en Node.js, Express.js, React, Next.js et React Native (Expo). Il a travaillé sur des projets d'API E-Commerce, de gestion d'université, de SaaS de vote en ligne et de billetterie. Il est passionné par les architectures modernes et les expériences utilisateur fluides.";
 
   const fetchSuggestions = async () => {
     setIsGenerating(true);
     try {
       const result = await aiChatSuggestion({ portfolioContent });
-      setSuggestions(result.suggestions);
+      if (result && result.suggestions) {
+        setSuggestions(result.suggestions);
+      }
     } catch (error) {
-      console.error('Error generating suggestions:', error);
+      console.error('Erreur lors de la génération des suggestions:', error);
     } finally {
       setIsGenerating(false);
     }
@@ -46,12 +48,12 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate API call
+    // Simulation d'appel API
     await new Promise(resolve => setTimeout(resolve, 1500));
     setLoading(false);
     toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: "Message envoyé !",
+      description: "Merci de m'avoir contacté. Je vous répondrai dès que possible.",
     });
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -60,9 +62,9 @@ export function Contact() {
     <section id="contact" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold font-headline mb-4 tracking-tight">Let's Collaborate</h2>
+          <h2 className="text-3xl md:text-5xl font-bold font-headline mb-4 tracking-tight">Collaborons Ensemble</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Have a vision? I'm ready to help you build it. Use the form below or pick an AI suggestion to get started.
+            Vous avez un projet ? Je suis prêt à vous aider à le réaliser. Utilisez le formulaire ci-dessous ou choisissez une suggestion de l'IA pour commencer.
           </p>
         </div>
 
@@ -71,15 +73,16 @@ export function Contact() {
             <Card className="bg-card/50 border-border/50">
               <CardContent className="p-8">
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-primary" /> AI Inquiry Assistant
+                  <Sparkles className="w-5 h-5 text-primary" /> Assistant de demande IA
                 </h3>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Need help starting? Click a suggestion based on my portfolio:
+                  Besoin d'aide pour commencer ? Cliquez sur une suggestion basée sur mon profil :
                 </p>
                 <div className="space-y-3">
                   {isGenerating ? (
-                    <div className="flex items-center justify-center py-8 text-primary">
+                    <div className="flex flex-col items-center justify-center py-8 text-primary gap-3">
                       <Loader2 className="w-6 h-6 animate-spin" />
+                      <span className="text-xs font-medium animate-pulse">Génération des idées...</span>
                     </div>
                   ) : (
                     suggestions.map((suggestion, idx) => (
@@ -99,8 +102,9 @@ export function Contact() {
                   size="sm" 
                   onClick={fetchSuggestions} 
                   className="mt-4 text-xs text-primary font-bold hover:bg-primary/10"
+                  disabled={isGenerating}
                 >
-                  Regenerate Suggestions
+                  Régénérer les suggestions
                 </Button>
               </CardContent>
             </Card>
@@ -111,8 +115,8 @@ export function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground">Direct Email</p>
-                  <p className="font-bold">hello@devsphere.com</p>
+                  <p className="text-sm font-medium text-muted-foreground">Email Direct</p>
+                  <p className="font-bold">godson@example.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -120,8 +124,8 @@ export function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground">Phone Number</p>
-                  <p className="font-bold">+1 (415) 555-0198</p>
+                  <p className="text-sm font-medium text-muted-foreground">Téléphone</p>
+                  <p className="font-bold">+33 6 00 00 00 00</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -129,8 +133,8 @@ export function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground">Office Location</p>
-                  <p className="font-bold">San Francisco, CA</p>
+                  <p className="text-sm font-medium text-muted-foreground">Localisation</p>
+                  <p className="font-bold">Paris, France / Remote</p>
                 </div>
               </div>
             </div>
@@ -142,21 +146,21 @@ export function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Your Name</label>
+                      <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Votre Nom</label>
                       <Input
                         required
-                        placeholder="John Doe"
+                        placeholder="Jean Dupont"
                         className="bg-muted border-none focus-visible:ring-primary"
                         value={formData.name}
                         onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))}
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Your Email</label>
+                      <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Votre Email</label>
                       <Input
                         required
                         type="email"
-                        placeholder="john@example.com"
+                        placeholder="jean@example.com"
                         className="bg-muted border-none focus-visible:ring-primary"
                         value={formData.email}
                         onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))}
@@ -164,20 +168,20 @@ export function Contact() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Subject</label>
+                    <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Sujet</label>
                     <Input
                       required
-                      placeholder="Project Inquiry"
+                      placeholder="Demande de projet"
                       className="bg-muted border-none focus-visible:ring-primary"
                       value={formData.subject}
                       onChange={e => setFormData(prev => ({ ...prev, subject: e.target.value }))}
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Your Message</label>
+                    <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Votre Message</label>
                     <Textarea
                       required
-                      placeholder="Tell me about your project..."
+                      placeholder="Parlez-moi de votre projet..."
                       className="min-h-[160px] bg-muted border-none focus-visible:ring-primary"
                       value={formData.message}
                       onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))}
@@ -191,11 +195,11 @@ export function Contact() {
                   >
                     {loading ? (
                       <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" /> Envoi en cours...
                       </>
                     ) : (
                       <>
-                        Send Message <Send className="ml-2 w-4 h-4" />
+                        Envoyer le Message <Send className="ml-2 w-4 h-4" />
                       </>
                     )}
                   </Button>
