@@ -40,11 +40,36 @@ const projects = [
   },
   {
     id: 'project-4',
-    title: 'Parto AI',
+    title: 'Assuraf',
     category: 'web',
-    icon: <div className="border-2 border-black p-1 flex items-center gap-1 font-bold text-xs">
-            <span>PARTO</span>
-            <span className="bg-black text-white px-1">AI</span>
+    icon: <div className="flex items-center gap-1">
+            <div className="relative w-14 h-14">
+              {/* Emblème 'a' en forme d'empreinte avec carte d'Afrique simplifiée */}
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                {/* Lignes d'empreinte formant le 'a' */}
+                <path 
+                  d="M50,85 C25,85 10,65 10,45 C10,25 30,10 50,10 C70,10 90,25 90,45 L90,85" 
+                  fill="none" 
+                  stroke="#f97316" 
+                  strokeWidth="8" 
+                  strokeDasharray="2,4"
+                />
+                <path 
+                  d="M50,70 C35,70 25,58 25,45 C25,32 35,20 50,20 C65,20 75,32 75,45 L75,70" 
+                  fill="none" 
+                  stroke="#f97316" 
+                  strokeWidth="4" 
+                  strokeDasharray="1,2"
+                />
+                {/* Silhouette de l'Afrique au centre */}
+                <path 
+                  d="M42,40 L48,38 L55,42 L52,55 L45,58 L40,50 Z" 
+                  fill="#f97316" 
+                />
+              </svg>
+            </div>
+            {/* Le 'f' solide caractéristique */}
+            <span className="text-6xl font-black text-[#f97316] -ml-2 -mb-1">f</span>
           </div>,
   },
   {
