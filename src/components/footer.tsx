@@ -1,15 +1,36 @@
 
 "use client";
 
-import React from 'react';
-import { Github, Linkedin, Twitter, Mail, ArrowRight, ChevronUp, Code2, Coffee, Heart } from 'lucide-react';
+import React, { useState } from 'react';
+import { Github, Linkedin, Twitter, Mail, ArrowRight, ChevronUp, Code2, Coffee, Heart, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
+import { useToast } from '@/hooks/use-toast';
 
 export function Footer() {
+  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setLoading(true);
+    // Simulation d'envoi
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setLoading(false);
+
+    toast({
+      title: "Inscription réussie !",
+      description: "Votre email a bien été enregistré. Les mises à jour seront envoyées à thierno.241991@gmail.com.",
+    });
+    setEmail('');
   };
 
   return (
@@ -118,16 +139,23 @@ export function Footer() {
               <p className="text-slate-400 text-sm leading-relaxed">
                 Abonnez-vous pour recevoir mes derniers articles et actualités.
               </p>
-              <div className="relative group">
+              <form onSubmit={handleNewsletterSubmit} className="relative group">
                 <Input 
                   type="email" 
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Votre email" 
                   className="bg-slate-900/50 border-slate-700 text-white rounded-full pr-12 focus:ring-primary focus:border-primary h-12"
                 />
-                <button className="absolute right-1 top-1 bottom-1 w-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-slate-200 transition-colors">
-                  <ArrowRight className="w-5 h-5" />
+                <button 
+                  type="submit"
+                  disabled={loading}
+                  className="absolute right-1 top-1 bottom-1 w-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-slate-200 transition-colors disabled:opacity-50"
+                >
+                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <ArrowRight className="w-5 h-5" />}
                 </button>
-              </div>
+              </form>
             </div>
           </div>
 
