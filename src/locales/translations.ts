@@ -33,6 +33,9 @@ export const translations = {
       interests: 'Intérêts',
       interestsList: 'SaaS, Mobile Apps, API',
     },
+    codeShowcase: {
+      subtitle: 'Développeur Javascript',
+    },
     services: {
       title: 'Services et Expertise',
       subtitle: 'Des Solutions Complètes pour les Entreprises Modernes',
@@ -142,6 +145,9 @@ export const translations = {
       specialty: 'Specialty',
       interests: 'Interests',
       interestsList: 'SaaS, Mobile Apps, API',
+    },
+    codeShowcase: {
+      subtitle: 'Javascript Developer',
     },
     services: {
       title: 'Services and Expertise',
