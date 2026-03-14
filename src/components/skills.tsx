@@ -1,11 +1,16 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowUp, Github } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 
 export function Skills() {
   const { t } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const skillsData = [
     {
@@ -183,9 +188,12 @@ export function Skills() {
       description: t.skills.s_linux,
       icon: (
         <div className="w-16 h-16 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" className="w-12 h-12 fill-white">
-            <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zM12 4a8 8 0 100 16 8 8 0 000-16z" opacity=".2"/>
-            <path d="M12 7c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1zM11 11h2v6h-2z"/>
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
+            <path fill="#fbc02d" d="M37.5 38.3c-.6-1-1.3-1.9-2.2-2.7-1.4-1.3-3.2-2.1-5.1-2.4-1.9-.3-3.8-.1-5.6.5-1.8.6-3.4 1.7-4.6 3.1-1.2 1.4-1.9 3.2-2.1 5.1-.2 1.9.1 3.8.9 5.5.8 1.7 2.1 3.1 3.7 4 1.6.9 3.4 1.3 5.3 1.1 1.9-.2 3.6-.9 5-2.1 1.4-1.2 2.4-2.8 2.8-4.6.4-1.8.2-3.7-.4-5.4z"/>
+            <path fill="#263238" d="M24 4c-5.5 0-10 4.5-10 10 0 2.2.7 4.3 2 6l-2 10h20l-2-10c1.3-1.7 2-3.8 2-6 0-5.5-4.5-10-10-10z"/>
+            <circle fill="#fff" cx="19" cy="13" r="2"/>
+            <circle fill="#fff" cx="29" cy="13" r="2"/>
+            <path fill="#fbc02d" d="M24 16c-1.1 0-2 .9-2 2h4c0-1.1-.9-2-2-2z"/>
           </svg>
         </div>
       ),
@@ -235,6 +243,8 @@ export function Skills() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (!mounted) return null;
 
   return (
     <section id="skills" className="py-24 bg-[#020617] relative overflow-hidden">
