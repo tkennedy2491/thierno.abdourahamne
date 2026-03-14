@@ -19,19 +19,19 @@ export function Services() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-slate-800 tracking-tight">
-            Services & Expertise
+            Services et Expertise
           </h2>
           
           <div className="inline-block relative mb-8">
             <h3 className="text-3xl md:text-4xl font-bold text-[#6366f1] px-4">
-              Comprehensive Solutions for Modern Businesses
+              Des Solutions Complètes pour les Entreprises Modernes
             </h3>
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-[#6366f1] rounded-full" />
           </div>
           
           <p className="text-slate-500 max-w-3xl mx-auto text-xl leading-relaxed mt-10 font-medium">
-            From concept to deployment, I provide end-to-end development services that 
-            combine technical excellence with business value
+            De la conception au déploiement, je propose des services de développement complets 
+            alliant excellence technique et valeur ajoutée pour votre entreprise.
           </p>
         </div>
 
@@ -48,10 +48,10 @@ export function Services() {
               </svg>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Technical Consulting & Strategy
+              Conseil Technique et Stratégie
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Strategic technology consulting for startups and enterprises. Expert guidance on tech stack selection, architecture design, digital transformation, and scalable solutions.
+              Conseil technologique stratégique pour startups et entreprises. Accompagnement expert sur le choix de stack technique, la conception d'architecture et les solutions évolutives.
             </p>
           </div>
 
@@ -63,10 +63,10 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Full-Stack Web Development
+              Développement Web Full-Stack
             </h4>
             <p className="text-slate-800 text-base leading-relaxed font-medium">
-              End-to-end web application development using React, Next.js, TypeScript, and Node.js. Building responsive, fast, and secure platforms with modern frameworks.
+              Développement d'applications web de bout en bout avec React, Next.js, TypeScript et Node.js. Création de plateformes réactives, rapides et sécurisées avec les frameworks modernes.
             </p>
           </div>
 
@@ -79,10 +79,10 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Mobile App Development
+              Développement d'Apps Mobiles
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Cross-platform mobile solutions with React Native for iOS and Android. Delivering native-quality apps with offline capabilities and seamless UX.
+              Solutions mobiles multiplateformes avec React Native pour iOS et Android. Livraison d'applications de qualité native avec capacités hors ligne et expérience utilisateur fluide.
             </p>
           </div>
 
@@ -97,10 +97,10 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Cloud Architecture & DevOps
+              Architecture Cloud et DevOps
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Scalable cloud infrastructure on AWS, Azure, or GCP. Containerization with Docker/Kubernetes, automated deployments, monitoring, and infrastructure-as-code.
+              Infrastructure cloud évolutive sur AWS, Azure ou GCP. Conteneurisation avec Docker/Kubernetes, déploiements automatisés, surveillance et infrastructure-as-code.
             </p>
           </div>
 
@@ -115,10 +115,10 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Performance & SEO Optimization
+              Optimisation Performance et SEO
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Web performance audits, Core Web Vitals optimization, and technical SEO. Improving page speed, accessibility, and search rankings to maximize user engagement.
+              Audits de performance web, optimisation des Core Web Vitals et SEO technique. Amélioration de la vitesse de page et de l'accessibilité pour maximiser l'engagement utilisateur.
             </p>
           </div>
 
@@ -130,10 +130,10 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Code Review & Team Leadership
+              Revue de Code et Leadership
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Technical leadership, code quality reviews, security audits, and team mentoring. Refactoring legacy systems, implementing best practices, and ensuring maintainability.
+              Leadership technique, revues de qualité de code, audits de sécurité et mentorat. Refactorisation de systèmes existants et mise en place de bonnes pratiques de développement.
             </p>
           </div>
         </div>
