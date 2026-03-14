@@ -28,7 +28,7 @@ const projects = [
     title: 'University Manager',
     category: 'web',
     icon: <div className="flex flex-col items-center">
-            <GraduationCap className="w-16 h-16 text-slate-700" strokeWidth={1.5} />
+            < GraduationCap className="w-16 h-16 text-slate-700" strokeWidth={1.5} />
             <div className="h-1.5 w-12 bg-orange-400 rounded-full mt-[-8px]" />
           </div>,
   },
@@ -44,9 +44,7 @@ const projects = [
     category: 'web',
     icon: <div className="flex items-center gap-1">
             <div className="relative w-14 h-14">
-              {/* Emblème 'a' en forme d'empreinte avec carte d'Afrique simplifiée */}
               <svg viewBox="0 0 100 100" className="w-full h-full">
-                {/* Lignes d'empreinte formant le 'a' */}
                 <path 
                   d="M50,85 C25,85 10,65 10,45 C10,25 30,10 50,10 C70,10 90,25 90,45 L90,85" 
                   fill="none" 
@@ -61,28 +59,38 @@ const projects = [
                   strokeWidth="4" 
                   strokeDasharray="1,2"
                 />
-                {/* Silhouette de l'Afrique au centre */}
                 <path 
                   d="M42,40 L48,38 L55,42 L52,55 L45,58 L40,50 Z" 
                   fill="#f97316" 
                 />
               </svg>
             </div>
-            {/* Le 'f' solide caractéristique */}
             <span className="text-6xl font-black text-[#f97316] -ml-2 -mb-1">f</span>
           </div>,
   },
   {
     id: 'project-5',
-    title: 'Texsoro',
+    title: 'Cuberfit',
     category: 'mobile',
-    icon: <div className="flex items-center gap-1 text-[#7c3aed]">
-            <div className="flex gap-0.5">
-              <div className="w-1 h-4 bg-current rounded-full" />
-              <div className="w-1 h-6 bg-current rounded-full" />
-              <div className="w-1 h-3 bg-current rounded-full" />
-            </div>
-            <span className="text-2xl font-black tracking-tighter">Texsoro</span>
+    icon: <div className="w-24 h-24 bg-[#2b3ff2] rounded-[1.8rem] flex items-center justify-center overflow-hidden shadow-xl">
+            <svg viewBox="0 0 100 100" className="w-16 h-16">
+              {/* Forme blanche en 'C' */}
+              <path 
+                d="M78,68 A30,30 0 1,1 78,32" 
+                fill="none" 
+                stroke="white" 
+                strokeWidth="14" 
+                strokeLinecap="round"
+              />
+              {/* Accent bleu clair (aile) */}
+              <path 
+                d="M35,22 L85,22 C95,22 95,38 85,38 L70,38" 
+                fill="none" 
+                stroke="#38bdf8" 
+                strokeWidth="14" 
+                strokeLinecap="round"
+              />
+            </svg>
           </div>,
   },
   {
