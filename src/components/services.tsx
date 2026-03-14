@@ -1,13 +1,14 @@
-
 "use client";
 
 import React from 'react';
 import { Lightbulb, Code2, Smartphone, MessageCircle, Cloud, Zap, ShieldCheck, Megaphone, Search, Wrench } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 export function Services() {
+  const { t } = useLanguage();
+
   return (
     <section id="services" className="py-24 bg-white text-slate-900 relative overflow-hidden">
-      {/* Petit motif de points en haut à gauche */}
       <div className="absolute top-10 left-10 opacity-20 pointer-events-none">
         <div className="grid grid-cols-4 gap-2">
           {[...Array(16)].map((_, i) => (
@@ -19,24 +20,23 @@ export function Services() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-slate-800 tracking-tight">
-            Services et Expertise
+            {t.services.title}
           </h2>
           
           <div className="inline-block relative mb-8">
             <h3 className="text-3xl md:text-4xl font-bold text-[#6366f1] px-4">
-              Des Solutions Complètes pour les Entreprises Modernes
+              {t.services.subtitle}
             </h3>
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-[#6366f1] rounded-full" />
           </div>
           
           <p className="text-slate-500 max-w-3xl mx-auto text-xl leading-relaxed mt-10 font-medium">
-            De la conception au déploiement, je propose des services de développement complets 
-            alliant excellence technique et valeur ajoutée pour votre entreprise.
+            {t.services.desc}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {/* Card 1: Consulting (Indigo) */}
+          {/* Card 1: Consulting */}
           <div className="bg-[#7c3aed] text-white p-12 rounded-[40px] shadow-2xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-indigo-200">
             <div className="mb-10 w-24 h-24 flex items-center justify-center">
               <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
@@ -48,14 +48,14 @@ export function Services() {
               </svg>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Conseil Technique et Stratégie
+              {t.services.s1.title}
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Conseil technologique stratégique pour startups et entreprises. Accompagnement expert sur le choix de stack technique, la conception d'architecture et les solutions évolutives.
+              {t.services.s1.desc}
             </p>
           </div>
 
-          {/* Card 2: Web Dev (Yellow) */}
+          {/* Card 2: Web Dev */}
           <div className="bg-[#facc15] text-slate-900 p-12 rounded-[40px] shadow-2xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-yellow-100">
             <div className="mb-10 w-24 h-24 flex items-center justify-center">
               <div className="bg-white/40 p-4 rounded-3xl backdrop-blur-sm">
@@ -63,14 +63,14 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Développement Web Full-Stack
+              {t.services.s2.title}
             </h4>
             <p className="text-slate-800 text-base leading-relaxed font-medium">
-              Développement d'applications web de bout en bout avec React, Next.js, TypeScript et Node.js. Création de plateformes réactives, rapides et sécurisées avec les frameworks modernes.
+              {t.services.s2.desc}
             </p>
           </div>
 
-          {/* Card 3: Mobile Dev (Teal) */}
+          {/* Card 3: Mobile Dev */}
           <div className="bg-[#1e7a85] text-white p-12 rounded-[40px] shadow-2xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-teal-900/20">
             <div className="mb-10 w-24 h-24 flex items-center justify-center">
               <div className="relative">
@@ -79,14 +79,14 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Développement d'Apps Mobiles
+              {t.services.s3.title}
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Solutions mobiles multiplateformes avec React Native pour iOS et Android. Livraison d'applications de qualité native avec capacités hors ligne et expérience utilisateur fluide.
+              {t.services.s3.desc}
             </p>
           </div>
 
-          {/* Card 4: Cloud Architecture & DevOps (Orange) */}
+          {/* Card 4: Cloud */}
           <div className="bg-[#ff7e4d] text-white p-12 rounded-[40px] shadow-2xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-orange-200">
             <div className="mb-10 w-24 h-24 flex items-center justify-center">
               <div className="relative">
@@ -97,14 +97,14 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Architecture Cloud et DevOps
+              {t.services.s4.title}
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Infrastructure cloud évolutive sur AWS, Azure ou GCP. Conteneurisation avec Docker/Kubernetes, déploiements automatisés, surveillance et infrastructure-as-code.
+              {t.services.s4.desc}
             </p>
           </div>
 
-          {/* Card 5: Performance & SEO Optimization (Pink) */}
+          {/* Card 5: Performance */}
           <div className="bg-[#ff8090] text-white p-12 rounded-[40px] shadow-2xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-pink-200">
             <div className="mb-10 w-24 h-24 flex items-center justify-center">
               <div className="relative bg-white/20 p-6 rounded-2xl backdrop-blur-md border border-white/30">
@@ -115,14 +115,14 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Optimisation Performance et SEO
+              {t.services.s5.title}
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Audits de performance web, optimisation des Core Web Vitals et SEO technique. Amélioration de la vitesse de page et de l'accessibilité pour maximiser l'engagement utilisateur.
+              {t.services.s5.desc}
             </p>
           </div>
 
-          {/* Card 6: Code Review & Team Leadership (Olive) */}
+          {/* Card 6: Revue de code */}
           <div className="bg-[#7a9455] text-white p-12 rounded-[40px] shadow-2xl flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-green-900/20">
             <div className="mb-10 w-24 h-24 flex items-center justify-center">
               <div className="bg-black/10 p-5 rounded-full border-2 border-white/20">
@@ -130,16 +130,15 @@ export function Services() {
               </div>
             </div>
             <h4 className="text-2xl font-black mb-8 leading-tight px-2">
-              Revue de Code et Leadership
+              {t.services.s6.title}
             </h4>
             <p className="text-white/90 text-base leading-relaxed font-medium">
-              Leadership technique, revues de qualité de code, audits de sécurité et mentorat. Refactorisation de systèmes existants et mise en place de bonnes pratiques de développement.
+              {t.services.s6.desc}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Floating Chat Button */}
       <div className="fixed bottom-10 right-10 z-[60]">
         <button className="bg-gradient-to-br from-[#6366f1] to-[#a855f7] p-5 rounded-full shadow-[0_10px_40px_rgba(99,102,241,0.5)] cursor-pointer hover:scale-110 active:scale-95 transition-all group">
           <MessageCircle className="w-8 h-8 text-white group-hover:rotate-12 transition-transform" />

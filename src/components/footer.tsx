@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from 'react';
@@ -7,9 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/context/language-context';
 
 export function Footer() {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -27,8 +28,8 @@ export function Footer() {
     setLoading(false);
 
     toast({
-      title: "Inscription réussie !",
-      description: "Votre email a bien été enregistré. Les mises à jour seront envoyées à thierno.241991@gmail.com.",
+      title: t.footer.newsletterSuccess,
+      description: t.footer.newsletterSuccessDesc,
     });
     setEmail('');
   };
@@ -43,11 +44,11 @@ export function Footer() {
             {/* Column 1: À propos */}
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-white relative inline-block">
-                À propos
+                {t.footer.about}
                 <span className="absolute -bottom-1 left-0 w-8 h-1 bg-primary rounded-full"></span>
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Développeur web passionné par la création d'applications web modernes et performantes, avec une expertise en React, Next.js et TypeScript.
+                {t.footer.aboutDesc}
               </p>
               <div className="flex items-center gap-4">
                 <a 
@@ -86,18 +87,18 @@ export function Footer() {
             {/* Column 2: Liens rapides */}
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-white relative inline-block">
-                Liens rapides
+                {t.footer.quickLinks}
                 <span className="absolute -bottom-1 left-0 w-8 h-1 bg-primary rounded-full"></span>
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="#home" className="text-slate-400 hover:text-white text-sm transition-colors">Accueil</Link>
+                  <Link href="#home" className="text-slate-400 hover:text-white text-sm transition-colors">{t.nav.home}</Link>
                 </li>
                 <li>
-                  <Link href="#projects" className="text-slate-400 hover:text-white text-sm transition-colors">Projets</Link>
+                  <Link href="#projects" className="text-slate-400 hover:text-white text-sm transition-colors">{t.nav.projects}</Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="text-slate-400 hover:text-white text-sm transition-colors">Contact</Link>
+                  <Link href="#contact" className="text-slate-400 hover:text-white text-sm transition-colors">{t.nav.contact}</Link>
                 </li>
                 <li>
                   <Link href="#" className="text-slate-400 hover:text-white text-sm transition-colors">CV</Link>
@@ -108,24 +109,24 @@ export function Footer() {
             {/* Column 3: Services */}
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-white relative inline-block">
-                Services
+                {t.footer.services}
                 <span className="absolute -bottom-1 left-0 w-8 h-1 bg-primary rounded-full"></span>
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-slate-400 text-sm">
-                  <Code2 className="w-4 h-4 text-primary/50" /> Développement Front-end
+                  <Code2 className="w-4 h-4 text-primary/50" /> {t.footer.serv1}
                 </li>
                 <li className="flex items-center gap-2 text-slate-400 text-sm">
-                  <Code2 className="w-4 h-4 text-primary/50" /> Développement Back-end
+                  <Code2 className="w-4 h-4 text-primary/50" /> {t.footer.serv2}
                 </li>
                 <li className="flex items-center gap-2 text-slate-400 text-sm">
-                  <Code2 className="w-4 h-4 text-primary/50" /> Applications React/Next.js
+                  <Code2 className="w-4 h-4 text-primary/50" /> {t.footer.serv3}
                 </li>
                 <li className="flex items-center gap-2 text-slate-400 text-sm">
-                  <Code2 className="w-4 h-4 text-primary/50" /> Intégration API
+                  <Code2 className="w-4 h-4 text-primary/50" /> {t.footer.serv4}
                 </li>
                 <li className="flex items-center gap-2 text-slate-400 text-sm">
-                  <Code2 className="w-4 h-4 text-primary/50" /> Optimisation de performance
+                  <Code2 className="w-4 h-4 text-primary/50" /> {t.footer.serv5}
                 </li>
               </ul>
             </div>
@@ -133,11 +134,11 @@ export function Footer() {
             {/* Column 4: Newsletter */}
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-white relative inline-block">
-                Newsletter
+                {t.footer.newsletter}
                 <span className="absolute -bottom-1 left-0 w-8 h-1 bg-primary rounded-full"></span>
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Abonnez-vous pour recevoir mes derniers articles et actualités.
+                {t.footer.newsletterDesc}
               </p>
               <form onSubmit={handleNewsletterSubmit} className="relative group">
                 <Input 
@@ -145,7 +146,7 @@ export function Footer() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Votre email" 
+                  placeholder={t.footer.newsletterPlaceholder} 
                   className="bg-slate-900/50 border-slate-700 text-white rounded-full pr-12 focus:ring-primary focus:border-primary h-12"
                 />
                 <button 
@@ -162,11 +163,11 @@ export function Footer() {
           {/* Footer Bottom */}
           <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-slate-500 text-sm">
-              © {new Date().getFullYear()} Thierno Abdourahmane Diallo. Développé avec passion. Tous droits réservés.
+              © {new Date().getFullYear()} {t.footer.copyright}
             </p>
             
             <div className="flex items-center gap-1 text-slate-500 text-sm">
-              Fait avec <Heart className="w-4 h-4 text-red-500 inline fill-red-500" /> et <Coffee className="w-4 h-4 text-orange-500 inline" />
+              {t.footer.madeWith} <Heart className="w-4 h-4 text-red-500 inline fill-red-500" /> {t.footer.and} <Coffee className="w-4 h-4 text-orange-500 inline" />
             </div>
           </div>
 
@@ -174,7 +175,7 @@ export function Footer() {
           <button 
             onClick={scrollToTop}
             className="absolute -bottom-6 right-6 md:right-12 w-12 h-12 bg-white text-black rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-10"
-            aria-label="Retour en haut"
+            aria-label={t.footer.backToTop}
           >
             <ChevronUp className="w-6 h-6" />
           </button>
