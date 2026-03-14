@@ -72,23 +72,20 @@ const projects = [
     id: 'project-5',
     title: 'Cuberfit',
     category: 'mobile',
-    icon: <div className="w-24 h-24 bg-[#2b3ff2] rounded-[1.8rem] flex items-center justify-center overflow-hidden shadow-xl">
-            <svg viewBox="0 0 100 100" className="w-16 h-16">
-              {/* Forme blanche en 'C' */}
+    icon: <div className="relative w-24 h-24 flex items-center justify-center">
+            <svg viewBox="0 0 100 100" className="w-20 h-20">
+              {/* Arc de cercle inférieur (Bleu marine foncé) */}
               <path 
-                d="M78,68 A30,30 0 1,1 78,32" 
+                d="M25,45 A30,30 0 1,0 75,45" 
                 fill="none" 
-                stroke="white" 
-                strokeWidth="14" 
+                stroke="#0f172a" 
+                strokeWidth="18" 
                 strokeLinecap="round"
               />
-              {/* Accent bleu clair (aile) */}
+              {/* Barre supérieure inclinée (Bleu vif) */}
               <path 
-                d="M35,22 L85,22 C95,22 95,38 85,38 L70,38" 
-                fill="none" 
-                stroke="#38bdf8" 
-                strokeWidth="14" 
-                strokeLinecap="round"
+                d="M15,15 L70,15 L85,35 L30,35 Z" 
+                fill="#0ea5e9"
               />
             </svg>
           </div>,
