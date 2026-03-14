@@ -72,20 +72,25 @@ const projects = [
     id: 'project-5',
     title: 'Cuberfit',
     category: 'mobile',
-    icon: <div className="relative w-24 h-24 flex items-center justify-center">
-            <svg viewBox="0 0 100 100" className="w-20 h-20">
-              <path 
-                d="M25,45 A30,30 0 1,0 75,45" 
-                fill="none" 
-                stroke="#0f172a" 
-                strokeWidth="18" 
-                strokeLinecap="round"
-              />
-              <path 
-                d="M15,15 L70,15 L85,35 L30,35 Z" 
-                fill="#0ea5e9"
-              />
-            </svg>
+    icon: <div className="bg-[#2b3de2] px-8 py-5 rounded-2xl flex items-center gap-4 shadow-2xl scale-90">
+            <div className="w-14 h-14 relative">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                {/* White base of C */}
+                <path 
+                  d="M85,55 A35,35 0 1,1 35,25" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="20"
+                  strokeLinecap="butt"
+                />
+                {/* Light blue wing */}
+                <path 
+                  d="M12,25 L80,25 L95,45 L40,45 Z" 
+                  fill="#5ea3e1"
+                />
+              </svg>
+            </div>
+            <span className="text-4xl font-black text-white tracking-tighter">CUBERFIT</span>
           </div>,
   },
   {
