@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Twitter, Mail, ArrowRight, ChevronUp, Code2, Coffee, Heart, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -13,6 +13,11 @@ export function Footer() {
   const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -163,7 +168,7 @@ export function Footer() {
           {/* Footer Bottom */}
           <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-slate-500 text-sm">
-              © {new Date().getFullYear()} {t.footer.copyright}
+              © {isMounted ? new Date().getFullYear() : '2025'} {t.footer.copyright}
             </p>
             
             <div className="flex items-center gap-1 text-slate-500 text-sm">
