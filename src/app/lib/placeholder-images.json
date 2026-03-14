@@ -36,6 +36,12 @@
       "description": "TypeScript code editor with syntax highlighting",
       "imageUrl": "https://picsum.photos/seed/typescript-code-dark/1200/800",
       "imageHint": "typescript code"
+    },
+    {
+      "id": "atos-logo",
+      "description": "Logo officiel Atos",
+      "imageUrl": "/atos.png",
+      "imageHint": "atos logo"
     }
   ]
 }
