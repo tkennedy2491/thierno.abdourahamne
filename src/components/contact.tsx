@@ -8,8 +8,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { aiChatSuggestion } from '@/ai/flows/ai-chat-suggestion';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/context/language-context';
 
 export function Contact() {
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
@@ -52,8 +54,8 @@ export function Contact() {
     await new Promise(resolve => setTimeout(resolve, 1500));
     setLoading(false);
     toast({
-      title: "Message envoyé !",
-      description: "Merci de m'avoir contacté. Je vous répondrai dès que possible.",
+      title: t.contact.success,
+      description: t.contact.successDesc,
     });
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -62,9 +64,9 @@ export function Contact() {
     <section id="contact" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold font-headline mb-4 tracking-tight">Collaborons Ensemble</h2>
+          <h2 className="text-3xl md:text-5xl font-bold font-headline mb-4 tracking-tight">{t.contact.title}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Vous avez un projet ? Je suis prêt à vous aider à le réaliser. Utilisez le formulaire ci-dessous ou choisissez une suggestion de l'IA pour commencer.
+            {t.contact.desc}
           </p>
         </div>
 
@@ -73,16 +75,16 @@ export function Contact() {
             <Card className="bg-card/50 border-border/50">
               <CardContent className="p-8">
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-primary" /> Assistant de demande IA
+                  <Sparkles className="w-5 h-5 text-primary" /> {t.contact.aiTitle}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Besoin d'aide pour commencer ? Cliquez sur une suggestion basée sur mon profil :
+                  {t.contact.aiDesc}
                 </p>
                 <div className="space-y-3">
                   {isGenerating ? (
                     <div className="flex flex-col items-center justify-center py-8 text-primary gap-3">
                       <Loader2 className="w-6 h-6 animate-spin" />
-                      <span className="text-xs font-medium animate-pulse">Génération des idées...</span>
+                      <span className="text-xs font-medium animate-pulse">{t.contact.aiGenerating}</span>
                     </div>
                   ) : (
                     suggestions.map((suggestion, idx) => (
@@ -104,7 +106,7 @@ export function Contact() {
                   className="mt-4 text-xs text-primary font-bold hover:bg-primary/10"
                   disabled={isGenerating}
                 >
-                  Régénérer les suggestions
+                  {t.contact.aiRegenerate}
                 </Button>
               </CardContent>
             </Card>
@@ -115,7 +117,7 @@ export function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground">Email Direct</p>
+                  <p className="text-sm font-medium text-muted-foreground">{t.contact.info.email}</p>
                   <p className="font-bold">thierno.241991@gmail.com</p>
                 </div>
               </div>
@@ -124,7 +126,7 @@ export function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground">Téléphone</p>
+                  <p className="text-sm font-medium text-muted-foreground">{t.contact.info.phone}</p>
                   <p className="font-bold">+221 77 575 50 65</p>
                 </div>
               </div>
@@ -133,7 +135,7 @@ export function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground">Localisation</p>
+                  <p className="text-sm font-medium text-muted-foreground">{t.contact.info.loc}</p>
                   <p className="font-bold">Dakar, Sénégal</p>
                 </div>
               </div>
@@ -146,21 +148,21 @@ export function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Votre Nom</label>
+                      <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t.contact.labels.name}</label>
                       <Input
                         required
-                        placeholder="Jean Dupont"
+                        placeholder={t.contact.placeholders.name}
                         className="bg-muted border-none focus-visible:ring-primary"
                         value={formData.name}
                         onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))}
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Votre Email</label>
+                      <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t.contact.labels.email}</label>
                       <Input
                         required
                         type="email"
-                        placeholder="jean@example.com"
+                        placeholder={t.contact.placeholders.email}
                         className="bg-muted border-none focus-visible:ring-primary"
                         value={formData.email}
                         onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))}
@@ -168,20 +170,20 @@ export function Contact() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Sujet</label>
+                    <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t.contact.labels.subject}</label>
                     <Input
                       required
-                      placeholder="Demande de projet"
+                      placeholder={t.contact.placeholders.subject}
                       className="bg-muted border-none focus-visible:ring-primary"
                       value={formData.subject}
                       onChange={e => setFormData(prev => ({ ...prev, subject: e.target.value }))}
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Votre Message</label>
+                    <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t.contact.labels.message}</label>
                     <Textarea
                       required
-                      placeholder="Parlez-moi de votre projet..."
+                      placeholder={t.contact.placeholders.message}
                       className="min-h-[160px] bg-muted border-none focus-visible:ring-primary"
                       value={formData.message}
                       onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))}
@@ -195,11 +197,11 @@ export function Contact() {
                   >
                     {loading ? (
                       <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" /> Envoi en cours...
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" /> {t.contact.sending}
                       </>
                     ) : (
                       <>
-                        Envoyer le Message <Send className="ml-2 w-4 h-4" />
+                        {t.contact.submitBtn} <Send className="ml-2 w-4 h-4" />
                       </>
                     )}
                   </Button>
