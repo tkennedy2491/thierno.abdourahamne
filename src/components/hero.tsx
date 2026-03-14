@@ -188,7 +188,7 @@ export function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % cyclingWords.length);
-    }, 3000); // Augmenté à 3 secondes
+    }, 3000); 
     return () => clearInterval(interval);
   }, []);
 
@@ -212,8 +212,8 @@ export function Hero() {
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold font-headline mb-4 tracking-tight leading-tight">
-            Je suis <span className="text-white font-extrabold">Godson</span>
+          <h1 className="text-5xl md:text-6xl font-bold font-headline mb-4 tracking-tight leading-tight">
+            Je suis <span className="text-white font-extrabold">Thierno Abdourahmane Diallo</span>
           </h1>
           
           <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">

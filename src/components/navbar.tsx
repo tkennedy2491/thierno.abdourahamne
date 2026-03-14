@@ -39,7 +39,7 @@ export function Navbar() {
           <div className="bg-primary p-1.5 rounded-lg group-hover:rotate-12 transition-transform text-white">
             <Code2 className="w-6 h-6" />
           </div>
-          <span className="text-xl font-bold font-headline tracking-tight">Godson</span>
+          <span className="text-xl font-bold font-headline tracking-tight">Thierno</span>
         </Link>
 
         {/* Desktop Nav */}
