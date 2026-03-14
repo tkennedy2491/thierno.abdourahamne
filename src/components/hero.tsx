@@ -266,9 +266,9 @@ export function Hero() {
 
           <div className="flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="px-10 bg-[#1e293b]/80 hover:bg-[#1e293b] border border-slate-700/50 text-white font-bold rounded-full h-14 transition-all backdrop-blur-md shadow-2xl">
-              <Link href="#">
+              <a href="/docs/cv.pdf" download="CV_Thierno_Abdourahmane_Diallo.pdf">
                 {t.hero.cvBtn} <Download className="ml-2 w-4 h-4" />
-              </Link>
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="px-10 border-slate-700 hover:bg-white/5 text-white font-bold rounded-full h-14 transition-all shadow-xl bg-transparent">
               <Link href="#contact">{t.hero.contactBtn}</Link>
