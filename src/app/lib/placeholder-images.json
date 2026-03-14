@@ -33,9 +33,9 @@
     },
     {
       "id": "code-snippet",
-      "description": "Close up of colorful code syntax on a dark screen",
-      "imageUrl": "https://picsum.photos/seed/codesnippet1/1200/800",
-      "imageHint": "coding code"
+      "description": "Close up of colorful TypeScript code syntax in VS Code",
+      "imageUrl": "https://picsum.photos/seed/typescript-code/1200/800",
+      "imageHint": "typescript code"
     }
   ]
 }
