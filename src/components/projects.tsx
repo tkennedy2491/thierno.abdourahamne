@@ -43,11 +43,17 @@ const projects = [
   },
   {
     id: 'project-2',
-    title: 'University Manager',
-    category: 'web',
-    icon: <div className="flex flex-col items-center">
-            < GraduationCap className="w-16 h-16 text-slate-700" strokeWidth={1.5} />
-            <div className="h-1.5 w-12 bg-orange-400 rounded-full mt-[-8px]" />
+    title: 'Atos',
+    category: 'mobile',
+    icon: <div className="flex items-center">
+            <span className="text-5xl font-bold text-[#0066a1] tracking-tighter">At</span>
+            <div className="w-10 h-10 mx-[-2px] relative translate-y-1">
+              <svg viewBox="0 0 100 100" className="w-full h-full fill-[#0066a1]">
+                <path d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C55,95 60,94 65,92 C55,85 50,70 50,50 C50,30 55,15 65,8 C60,6 55,5 50,5 Z" />
+                <path d="M50,5 C75,5 95,25 95,50 C95,75 75,95 50,95 C45,95 40,94 35,92 C45,85 50,70 50,50 C50,30 45,15 35,8 C40,6 45,5 50,5 Z" />
+              </svg>
+            </div>
+            <span className="text-5xl font-bold text-[#0066a1] tracking-tighter uppercase">s</span>
           </div>,
   },
   {
@@ -109,21 +115,6 @@ const projects = [
               </svg>
             </div>
             <span className="text-4xl font-black text-white tracking-tighter">CUBERFIT</span>
-          </div>,
-  },
-  {
-    id: 'project-6',
-    title: 'Atos',
-    category: 'mobile',
-    icon: <div className="flex items-center">
-            <span className="text-5xl font-bold text-[#0066a1] tracking-tighter">At</span>
-            <div className="w-10 h-10 mx-[-2px] relative translate-y-1">
-              <svg viewBox="0 0 100 100" className="w-full h-full fill-[#0066a1]">
-                <path d="M50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C55,95 60,94 65,92 C55,85 50,70 50,50 C50,30 55,15 65,8 C60,6 55,5 50,5 Z" />
-                <path d="M50,5 C75,5 95,25 95,50 C95,75 75,95 50,95 C45,95 40,94 35,92 C45,85 50,70 50,50 C50,30 45,15 35,8 C40,6 45,5 50,5 Z" />
-              </svg>
-            </div>
-            <span className="text-5xl font-bold text-[#0066a1] tracking-tighter uppercase">s</span>
           </div>,
   }
 ];
