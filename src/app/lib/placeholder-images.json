@@ -30,6 +30,12 @@
       "description": "Abstract dark purple technological background",
       "imageUrl": "https://picsum.photos/seed/herobg/1920/1080",
       "imageHint": "abstract tech background"
+    },
+    {
+      "id": "code-snippet",
+      "description": "Close up of colorful code syntax on a dark screen",
+      "imageUrl": "https://picsum.photos/seed/codesnippet1/1200/800",
+      "imageHint": "coding code"
     }
   ]
 }
