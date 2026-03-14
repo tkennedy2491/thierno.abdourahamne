@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -12,14 +13,15 @@ export function CodeShowcase() {
     <section className="py-24 bg-[#020617] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] aspect-[21/9] flex items-center justify-center">
-          {/* Background blurred code */}
+          {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src={codeImage?.imageUrl || "https://picsum.photos/seed/code-banner/1200/500"}
+              src={codeImage?.imageUrl || "/typecrit.jpg"}
               alt="Background Code"
               fill
-              className="object-cover blur-[2px] brightness-[0.2]"
+              className="object-cover blur-[1px] brightness-[0.3]"
               data-ai-hint="code background"
+              sizes="(max-width: 1280px) 100vw, 1200px"
             />
           </div>
 
