@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/app/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
@@ -15,7 +14,7 @@ export function About() {
             <div className="relative aspect-square overflow-hidden rounded-2xl border border-border">
               <Image
                 src={profileImage?.imageUrl || "https://picsum.photos/seed/about/600/600"}
-                alt="Godson Profile"
+                alt="Thierno Abdourahmane Diallo Profile"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 data-ai-hint="developer portrait"
@@ -36,7 +35,7 @@ export function About() {
             </h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Je suis un ingénieur logiciel basé sur l'innovation numérique. Mon parcours a commencé par une curiosité pour le fonctionnement d'Internet, qui s'est transformée en une passion pour la création d'applications robustes.
+                Je suis Thierno Abdourahmane Diallo, un ingénieur logiciel basé sur l'innovation numérique. Mon parcours a commencé par une curiosité pour le fonctionnement d'Internet, qui s'est transformée en une passion pour la création d'applications robustes.
               </p>
               <p>
                 Spécialisé en Typescript, React et Node.js, je me concentre sur la création d'architectures frontend évolutives et d'expériences utilisateur fluides. Je crois qu'un bon code n'est pas seulement fonctionnel, mais aussi expressif et maintenable.
@@ -49,11 +48,11 @@ export function About() {
             <div className="grid grid-cols-2 gap-6 mt-10">
               <div>
                 <h4 className="font-bold text-foreground mb-1">Localisation</h4>
-                <p className="text-muted-foreground">France / Remote</p>
+                <p className="text-muted-foreground">Dakar, Sénégal</p>
               </div>
               <div>
                 <h4 className="font-bold text-foreground mb-1">Email</h4>
-                <p className="text-muted-foreground">godson@example.com</p>
+                <p className="text-muted-foreground">thierno.diallo@example.com</p>
               </div>
               <div>
                 <h4 className="font-bold text-foreground mb-1">Spécialité</h4>

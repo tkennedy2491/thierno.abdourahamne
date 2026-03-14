@@ -116,7 +116,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-muted-foreground">Email Direct</p>
-                  <p className="font-bold">godson@example.com</p>
+                  <p className="font-bold">thierno.diallo@example.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -125,7 +125,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-muted-foreground">Téléphone</p>
-                  <p className="font-bold">+33 6 00 00 00 00</p>
+                  <p className="font-bold">+221 77 575 50 65</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -134,7 +134,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-muted-foreground">Localisation</p>
-                  <p className="font-bold">Paris, France / Remote</p>
+                  <p className="font-bold">Dakar, Sénégal</p>
                 </div>
               </div>
             </div>
