@@ -16,6 +16,7 @@ import {
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
@@ -26,6 +27,7 @@ export function Navbar() {
   ];
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -65,43 +67,47 @@ export function Navbar() {
               <Link href="#contact">{t.nav.contactBtn}</Link>
             </Button>
 
-            {/* Language Selector */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="gap-2 border-border/50 bg-background/50 backdrop-blur-sm">
-                  <Globe className="w-4 h-4" />
-                  <span className="uppercase text-xs font-bold">{language}</span>
-                  <ChevronDown className="w-3 h-3 opacity-50" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border-border">
-                <DropdownMenuItem onClick={() => setLanguage('fr')} className="gap-2 cursor-pointer">
-                  <span className="text-sm font-medium">Français</span>
-                  {language === 'fr' && <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto" />}
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('en')} className="gap-2 cursor-pointer">
-                  <span className="text-sm font-medium">English</span>
-                  {language === 'en' && <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto" />}
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Language Selector - Rendered only after mount to avoid hydration mismatch */}
+            {mounted && (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm" className="gap-2 border-border/50 bg-background/50 backdrop-blur-sm">
+                    <Globe className="w-4 h-4" />
+                    <span className="uppercase text-xs font-bold">{language}</span>
+                    <ChevronDown className="w-3 h-3 opacity-50" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border-border">
+                  <DropdownMenuItem onClick={() => setLanguage('fr')} className="gap-2 cursor-pointer">
+                    <span className="text-sm font-medium">Français</span>
+                    {language === 'fr' && <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto" />}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setLanguage('en')} className="gap-2 cursor-pointer">
+                    <span className="text-sm font-medium">English</span>
+                    {language === 'en' && <div className="w-1.5 h-1.5 rounded-full bg-primary ml-auto" />}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
           </div>
         </div>
 
         {/* Mobile Toggle */}
         <div className="flex items-center gap-3 md:hidden">
            {/* Language Selector Mobile */}
-           <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="w-9 h-9">
-                  <Globe className="w-5 h-5" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setLanguage('fr')}>Français</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('en')}>English</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+           {mounted && (
+             <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="w-9 h-9">
+                    <Globe className="w-5 h-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={() => setLanguage('fr')}>Français</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setLanguage('en')}>English</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+           )}
 
           <button
             className="text-foreground p-1"

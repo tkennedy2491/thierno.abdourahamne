@@ -1,8 +1,6 @@
-
 "use client";
 
 import React, { useState } from 'react';
-import { GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -100,6 +98,7 @@ export function Projects() {
                 fill 
                 className="object-contain"
                 data-ai-hint="cuberfit logo"
+                sizes="(max-width: 768px) 100vw, 200px"
               />
             </div>,
     }
