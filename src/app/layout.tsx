@@ -3,8 +3,8 @@ import './globals.css';
 import { LanguageProvider } from '@/context/language-context';
 
 export const metadata: Metadata = {
-  title: 'Godson | Développeur Web & Mobile',
-  description: 'Portfolio de Godson, Développeur web & mobile spécialisé en Typescript, React et Node.js.',
+  title: 'Thierno Abdourahmane Diallo | Développeur Web & Mobile',
+  description: 'Portfolio de Thierno Abdourahmane Diallo, Développeur web & mobile spécialisé en Typescript, React et Node.js.',
 };
 
 export default function RootLayout({
