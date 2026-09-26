@@ -87,7 +87,7 @@ export function Projects() {
       date: t.projects.items.assuraf.date,
       desc: t.projects.items.assuraf.desc,
       tasks: t.projects.items.assuraf.tasks,
-      tech: ['Express.js', 'React', 'MongoDB', 'Cloud Storage', 'Node.js/NestJS'],
+      tech: ['Vue.js', 'Express.js', 'React', 'MongoDB', 'Cloud Storage', 'Node.js/NestJS'],
       icon: <div className="flex items-center gap-1">
               <div className="relative w-14 h-14">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -163,15 +163,15 @@ export function Projects() {
           {filteredProjects.map((project) => (
             <Dialog key={project.id}>
               <DialogTrigger asChild>
-                <button className="group relative w-full text-left outline-none">
-                  <div className="aspect-[1.4/1] bg-[#dee2ff] rounded-[2.5rem] flex items-center justify-center transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-indigo-200/50 group-hover:-translate-y-2 overflow-hidden">
+                <button className="group relative w-full text-left outline-none block">
+                  <div className="aspect-[1.4/1] bg-[#dee2ff] rounded-[2.5rem] flex items-center justify-center transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-indigo-200/50 group-hover:-translate-y-2 overflow-hidden w-full">
                     <div className="transition-transform duration-500 group-hover:scale-110">
                       {project.icon}
                     </div>
                     <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <div className="mt-4 px-4 text-center">
-                    <span className="font-bold text-slate-700">{project.title}</span>
+                    <span className="font-bold text-slate-700 block">{project.title}</span>
                   </div>
                 </button>
               </DialogTrigger>
