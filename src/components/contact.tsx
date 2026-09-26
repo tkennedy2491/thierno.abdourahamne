@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -25,7 +24,7 @@ export function Contact() {
     message: ''
   });
 
-  const portfolioContent = "Thierno Abdourahmane Diallo est un développeur Full Stack spécialisé en Node.js, Express.js, React, Next.js et React Native (Expo). Il a travaillé sur des projets d'API E-Commerce, de gestion d'université, de SaaS de vote en ligne et de billetterie. Il est passionné par les architectures modernes et les expériences utilisateur fluides.";
+  const portfolioContent = "Thierno Abdourahmane Diallo est un développeur Full Stack spécialisé en Node.js/NestJS, Express.js, React, Next.js et React Native (Expo). Il a travaillé sur des projets d'API E-Commerce, de gestion d'université, de SaaS de vote en ligne et de billetterie. Il est passionné par les architectures modernes et les expériences utilisateur fluides.";
 
   const fetchSuggestions = async () => {
     setIsGenerating(true);

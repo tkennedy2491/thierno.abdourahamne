@@ -24,7 +24,7 @@ export const translations = {
       title: 'Développeur Passionné dédié à la',
       quality: 'Qualité',
       desc1: 'Je suis Thierno Abdourahmane Diallo, ingénieur logiciel orienté vers l\'innovation digitale. Mon parcours a commencé par une curiosité sur le fonctionnement du Web, qui est devenue une passion pour la création d\'applications robustes.',
-      desc2: 'Spécialisé en .NET Core, React, et Node.js, je me concentre sur la création d\'architectures évolutives et d\'expériences utilisateur fluides.',
+      desc2: 'Spécialisé en .NET Core, React, et Node.js/NestJS, je me concentre sur la création d\'architectures évolutives et d\'expériences utilisateur fluides.',
       desc3: 'Je suis constamment à la recherche de nouveaux défis et j\'aime explorer les dernières tendances technologiques pour proposer des solutions toujours plus performantes.',
       expYears: 'Années d\'expérience',
       loc: 'Localisation',
@@ -41,7 +41,7 @@ export const translations = {
       subtitle: 'Des Solutions Complètes pour les Entreprises Modernes',
       desc: 'De la conception au déploiement, je propose des services de développement complets alliant excellence technique et valeur ajoutée pour votre entreprise.',
       s1: { title: 'Conseil Technique et Stratégie', desc: "Conseil technologique stratégique pour startups et entreprises. Accompagnement expert sur le choix de stack technique, la conception d'architecture et les solutions évolutives." },
-      s2: { title: 'Développement Web Full-Stack', desc: "Conception d'applications web modernes et performantes. Expertise polyvalente sur les stacks d'entreprise : ASP.NET Core (C#), Java Spring Boot, Node.js (Express), Python, couplés aux frameworks front-end React, Next.js et Angular pour des architectures robustes et sécurisées." },
+      s2: { title: 'Développement Web Full-Stack', desc: "Conception d'applications web modernes et performantes. Expertise polyvalente sur les stacks d'entreprise : ASP.NET Core (C#), Java Spring Boot, Node.js (Express/NestJS), Python, couplés aux frameworks front-end React, Next.js et Angular pour des architectures robustes et sécurisées." },
       s3: { title: "Développement d'Apps Mobiles", desc: "Création d'expériences mobiles natives et hybrides fluides avec React Native et Flutter. Focus sur la performance, le design UX/UI et les fonctionnalités temps réel." },
       s4: { title: 'Architecture Cloud et DevOps', desc: "Infrastructure cloud évolutive sur AWS, Azure ou GCP. Conteneurisation avec Docker/Kubernetes, déploiements automatisés et surveillance." },
       s5: { title: 'Optimisation Performance et SEO', desc: "Audits de performance web, optimisation des Core Web Vitals et SEO technique. Amélioration de la vitesse de page et de l'accessibilité." },
@@ -56,7 +56,7 @@ export const translations = {
       devops: "BDD & DevOps",
       certsTitle: "Certifications",
       s_react: "React.js, Next.js, Angular, Flutter, React Native, TypeScript, Tailwind CSS.",
-      s_node: "ASP.NET Core (C#), Node.js, Express, Python, Java Spring Boot, Entity Framework.",
+      s_node: "ASP.NET Core (C#), Node.js, NestJS, Express, Python, Java Spring Boot, Entity Framework.",
       s_cloud: "AWS, Azure, Spark, Scala, Elasticsearch, Kibana, Databricks.",
       s_devops: "PostgreSQL, MySQL, MongoDB, Redis, Docker, Kubernetes, CI/CD, Git.",
     },
@@ -72,7 +72,7 @@ export const translations = {
           date: 'Décembre 2023 - Présent',
           desc: 'Plateforme complète de billetterie et de gestion de voyages.',
           tasks: [
-            "Conception de l'architecture Full-Stack avec Next.js et Node.js",
+            "Conception de l'architecture Full-Stack avec Next.js et Node.js/NestJS",
             "Mise en place d'un système de réservation en temps réel",
             "Intégration de passerelles de paiement sécurisées",
             "Développement d'un tableau de bord administrateur pour la gestion des flux"
@@ -85,7 +85,7 @@ export const translations = {
           tasks: [
             "Développement de l'interface utilisateur mobile avec React Native",
             "Consommation d'APIs complexes pour le reporting en temps réel",
-            "Mise en place de capacités hors-ligne avec synchronisation",
+            "Mise en place d'un système de synchronisation hors-ligne",
             "Optimisation des performances de rendu mobile"
           ]
         },
@@ -108,7 +108,7 @@ export const translations = {
             "Développement de formulaires de souscription dynamiques complexes",
             "Gestion des documents justificatifs via stockage Cloud",
             "Mise en place d'un moteur de calcul de devis instantané",
-            "Architecture API RESTful avec Express.js"
+            "Architecture API RESTful avec Express.js/Node.js"
           ]
         },
         cuberfit: {
@@ -119,7 +119,7 @@ export const translations = {
             "Développement de l'application mobile sous React Native / Expo",
             "Système de suivi d'exercices avec historisation des données",
             "Intégration de notifications push pour l'engagement utilisateur",
-            "Architecture Backend temps réel avec Socket.io"
+            "Architecture Backend temps réel avec Socket.io et Node.js/NestJS"
           ]
         }
       }
@@ -157,14 +157,14 @@ export const translations = {
       serv2: 'Solutions Cloud & DevOps',
       serv3: 'Développement Mobile Natif',
       serv4: 'Ingénierie de Données',
-      serv5: '.NET & Node.js Expertise',
+      serv5: '.NET & Node.js/NestJS Expertise',
     },
     chatbot: {
       title: 'Assistant Thierno',
       welcome: 'Bonjour ! Comment puis-je vous aider ?',
       back: 'Retour aux questions',
       q1: 'Quelle est votre stack technique ?',
-      a1: 'Je suis spécialisé en .NET Core, Node.js, React, Angular et les solutions Cloud (AWS/Azure).',
+      a1: 'Je suis spécialisé en .NET Core, Node.js/NestJS, React, Angular et les solutions Cloud (AWS/Azure).',
       q2: 'Êtes-vous certifié ?',
       a2: 'Oui, je possède plusieurs certifications Cloud (AWS Practitioner, Azure Admin AZ-104, Azure Fundamentals).',
       q3: 'Êtes-vous disponible ?',
@@ -198,7 +198,7 @@ export const translations = {
       title: 'Passionate Developer dedicated to',
       quality: 'Quality',
       desc1: 'I am Thierno Abdourahmane Diallo, a software engineer focused on digital innovation. My journey began with a curiosity about how the Internet works, which grew into a passion for building robust applications.',
-      desc2: 'Specializing in .NET Core, React, and Node.js, I focus on creating scalable architectures and seamless user experiences.',
+      desc2: 'Specializing in .NET Core, React, and Node.js/NestJS, I focus on creating scalable architectures and seamless user experiences.',
       desc3: 'I am constantly looking for new challenges and love exploring the latest technology trends to provide increasingly efficient solutions.',
       expYears: 'Years of Experience',
       loc: 'Location',
@@ -215,7 +215,7 @@ export const translations = {
       subtitle: 'Complete Solutions for Modern Businesses',
       desc: 'From design to deployment, I offer comprehensive development services combining technical excellence and added value for your business.',
       s1: { title: 'Technical Consulting & Strategy', desc: 'Strategic technology consulting for startups and companies. Expert advice on tech stack choice, architecture design and scalable solutions.' },
-      s2: { title: 'Full-Stack Web Development', desc: 'Design of modern and highly performant web applications. Multi-stack enterprise expertise: ASP.NET Core (C#), Java Spring Boot, Node.js (Express), Python, combined with front-end frameworks like React, Next.js, and Angular for robust and secure architectures.' },
+      s2: { title: 'Full-Stack Web Development', desc: 'Design of modern and highly performant web applications. Multi-stack enterprise expertise: ASP.NET Core (C#), Java Spring Boot, Node.js (Express/NestJS), Python, combined with front-end frameworks like React, Next.js, and Angular for robust and secure architectures.' },
       s3: { title: 'Mobile App Development', desc: 'Creating seamless native and hybrid mobile experiences with React Native and Flutter. Focus on performance, UX/UI design, and real-time features.' },
       s4: { title: 'Cloud Architecture & DevOps', desc: 'Scalable cloud infrastructure on AWS, Azure, or GCP. Containerization with Docker/Kubernetes, automated deployments and monitoring.' },
       s5: { title: 'Performance & SEO Optimization', desc: 'Web performance audits, Core Web Vitals optimization, and technical SEO. Improving page speed and accessibility to maximize user engagement.' },
@@ -230,7 +230,7 @@ export const translations = {
       devops: "DB & DevOps",
       certsTitle: "Certifications",
       s_react: "React.js, Next.js, Angular, Flutter, React Native, TypeScript, Tailwind CSS.",
-      s_node: "ASP.NET Core (C#), Node.js, Express, Python, Java Spring Boot, Entity Framework.",
+      s_node: "ASP.NET Core (C#), Node.js, NestJS, Express, Python, Java Spring Boot, Entity Framework.",
       s_cloud: "AWS, Azure, Spark, Scala, Elasticsearch, Kibana, Databricks.",
       s_devops: "PostgreSQL, MySQL, MongoDB, Redis, Docker, Kubernetes, CI/CD, Git.",
     },
@@ -246,7 +246,7 @@ export const translations = {
           date: 'December 2023 - Present',
           desc: 'Full ticketing and trip management platform.',
           tasks: [
-            "Full-Stack architecture design with Next.js and Node.js",
+            "Full-Stack architecture design with Next.js and Node.js/NestJS",
             "Real-time booking system implementation",
             "Secure payment gateway integration",
             "Admin dashboard development for flow management"
@@ -282,7 +282,7 @@ export const translations = {
             "Complex dynamic subscription forms development",
             "Supporting documents management via Cloud storage",
             "Instant quote calculation engine implementation",
-            "RESTful API architecture with Express.js"
+            "RESTful API architecture with Express.js/Node.js"
           ]
         },
         cuberfit: {
@@ -293,7 +293,7 @@ export const translations = {
             "Mobile app development using React Native / Expo",
             "Exercise tracking system with data logging",
             "Push notifications integration for user engagement",
-            "Real-time Backend architecture with Socket.io"
+            "Real-time Backend architecture with Socket.io and Node.js/NestJS"
           ]
         }
       }
@@ -331,14 +331,14 @@ export const translations = {
       serv2: 'Cloud & DevOps Solutions',
       serv3: 'Native Mobile Development',
       serv4: 'Data Engineering',
-      serv5: '.NET & Node.js Expertise',
+      serv5: '.NET & Node.js/NestJS Expertise',
     },
     chatbot: {
       title: 'Thierno Assistant',
       welcome: 'Hi! How can I help you today?',
       back: 'Back to questions',
       q1: 'What is your tech stack?',
-      a1: 'I specialize in .NET Core, Node.js, React, Angular, and Cloud solutions (AWS/Azure).',
+      a1: 'I specialize in .NET Core, Node.js/NestJS, React, Angular, and Cloud solutions (AWS/Azure).',
       q2: 'Are you certified?',
       a2: 'Yes, I hold several Cloud certifications (AWS Practitioner, Azure Admin AZ-104, Azure Fundamentals).',
       q3: 'How to contact you?',

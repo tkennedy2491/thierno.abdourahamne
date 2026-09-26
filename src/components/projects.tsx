@@ -35,7 +35,7 @@ export function Projects() {
       date: t.projects.items.okooltrip.date,
       desc: t.projects.items.okooltrip.desc,
       tasks: t.projects.items.okooltrip.tasks,
-      tech: ['Next.js', 'Node.js', 'Prisma', 'PostgreSQL'],
+      tech: ['Next.js', 'Node.js', 'NestJS', 'Prisma', 'PostgreSQL'],
       icon: <div className="flex items-center gap-1 scale-90">
               <div className="flex items-center font-black text-5xl tracking-tighter">
                 <span className="text-slate-900">Ok</span>
@@ -77,7 +77,7 @@ export function Projects() {
       date: t.projects.items.fegnseo.date,
       desc: t.projects.items.fegnseo.desc,
       tasks: t.projects.items.fegnseo.tasks,
-      tech: ['React', 'Python', 'Recharts', 'Node.js'],
+      tech: ['React', 'Python', 'Recharts', 'Node.js', 'NestJS'],
       icon: <h3 className="text-2xl font-black text-blue-600 tracking-tighter">Fegn<span className="text-blue-400 italic">SEO</span></h3>,
     },
     {
@@ -87,7 +87,7 @@ export function Projects() {
       date: t.projects.items.assuraf.date,
       desc: t.projects.items.assuraf.desc,
       tasks: t.projects.items.assuraf.tasks,
-      tech: ['Express.js', 'React', 'MongoDB', 'Cloud Storage'],
+      tech: ['Express.js', 'React', 'MongoDB', 'Cloud Storage', 'Node.js'],
       icon: <div className="flex items-center gap-1">
               <div className="relative w-14 h-14">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -121,7 +121,7 @@ export function Projects() {
       date: t.projects.items.cuberfit.date,
       desc: t.projects.items.cuberfit.desc,
       tasks: t.projects.items.cuberfit.tasks,
-      tech: ['React Native', 'Expo', 'Socket.io', 'Node.js'],
+      tech: ['React Native', 'Expo', 'Socket.io', 'Node.js', 'NestJS'],
       icon: <div className="relative w-48 h-24">
               <Image 
                 src={cuberfitLogo?.imageUrl || "/cuberfit.png"} 
