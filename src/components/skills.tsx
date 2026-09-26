@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { ArrowUp, Code2, Database, Cloud, Terminal, Award, CheckCircle2 } from 'lucide-react';
+import { ArrowUp, Code2, Database, Cloud, Terminal, Award, CheckCircle2, Smartphone } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 
 export function Skills() {
@@ -16,30 +16,30 @@ export function Skills() {
     {
       title: t.skills.frontend,
       description: t.skills.s_react,
-      icon: <Code2 className="w-12 h-12 text-primary" />,
+      icon: <Smartphone className="w-12 h-12 text-primary" />,
       borderColor: 'border-b-primary',
-      skills: ["Angular", "TypeScript", "React", "Next.js", "Vue.js", "Tailwind"]
+      skills: ["React Native", "Flutter", "Angular", "TypeScript", "Next.js", "React"]
     },
     {
       title: t.skills.backend,
       description: t.skills.s_node,
       icon: <Terminal className="w-12 h-12 text-green-500" />,
       borderColor: 'border-b-green-500',
-      skills: ["ASP.NET Core", "C#", "Node.js", "Python", "Java", "EF Core"]
+      skills: ["ASP.NET Core", "Node.js", "Spring Boot", "Python", "Java", "Express"]
     },
     {
       title: t.skills.cloud,
       description: t.skills.s_cloud,
       icon: <Cloud className="w-12 h-12 text-blue-500" />,
       borderColor: 'border-b-blue-500',
-      skills: ["AWS", "Azure", "Spark", "Scala", "Elasticsearch", "Kibana"]
+      skills: ["AWS", "Azure", "Databricks", "Spark", "Scala", "Elasticsearch"]
     },
     {
       title: t.skills.devops,
       description: t.skills.s_devops,
       icon: <Database className="w-12 h-12 text-orange-500" />,
       borderColor: 'border-b-orange-500',
-      skills: ["PostgreSQL", "MongoDB", "Redis", "Docker", "Kubernetes", "Git"]
+      skills: ["PostgreSQL", "MongoDB", "Redis", "Docker", "Kubernetes", "CI/CD"]
     }
   ];
 
