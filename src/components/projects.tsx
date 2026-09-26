@@ -67,7 +67,7 @@ export function Projects() {
       date: t.projects.items.atos.date,
       desc: t.projects.items.atos.desc,
       tasks: t.projects.items.atos.tasks,
-      tech: ['React Native', 'TypeScript', 'REST API'],
+      tech: ['Angular', 'ASP.NET Core', 'Redis', 'Python', 'PostgreSQL', 'REST API'],
       icon: <h3 className="text-5xl font-bold text-[#0066a1] tracking-tighter">Atos</h3>,
     },
     {
