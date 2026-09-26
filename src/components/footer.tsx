@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -116,8 +115,8 @@ export function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="/CV__Thierno Abdourahmane_Diallo.pdf" 
-                    download="CV__Thierno Abdourahmane_Diallo.pdf" 
+                    href="/cv.pdf" 
+                    download="cv.pdf" 
                     className="text-slate-400 hover:text-white text-sm transition-colors"
                   >
                     CV

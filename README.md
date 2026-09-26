@@ -31,7 +31,10 @@ Vercel est la plateforme la plus simple pour déployer Next.js sans avoir besoin
 3.  **Variables d'environnement** : Ajoutez `SMTP_USER`, `SMTP_PASS` et `GOOGLE_GENAI_API_KEY` dans les paramètres secrets de l'application.
 
 ## 📁 Gestion du CV
-Assurez-vous que votre fichier `CV__Thierno Abdourahmane_Diallo.pdf` est bien placé dans le dossier `public/` à la racine de votre projet pour qu'il soit téléchargeable.
+Pour mettre à jour votre CV :
+1. Renommez votre nouveau fichier PDF en **`cv.pdf`**.
+2. Placez-le dans le dossier **`public/`** à la racine de ce projet.
+3. Le lien de téléchargement sur le site sera mis à jour automatiquement.
 
 ## 📧 Rappel Sécurité
 Le fichier `.env` est local. Ne le partagez jamais. Utilisez toujours les interfaces de Vercel ou Firebase pour configurer vos clés secrètes en ligne.
