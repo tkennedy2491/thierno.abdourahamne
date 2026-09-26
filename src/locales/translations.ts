@@ -10,7 +10,7 @@ export const translations = {
     hero: {
       hi: 'Salut! 😉',
       im: 'Je suis',
-      title1: 'Développeur Full Stack',
+      title1: 'Full Stack Developer',
       title2: '& Mobile',
       desc1: "Bienvenue sur mon portfolio ! Ingénieur logiciel passionné par l'innovation, je conçois des solutions robustes et évolutives en utilisant les stacks les plus modernes du marché.",
       desc2: "Spécialisé dans les architectures complexes, je transforme vos idées en applications performantes.",
@@ -34,14 +34,14 @@ export const translations = {
       interestsList: 'SaaS, Apps Mobiles, API',
     },
     codeShowcase: {
-      subtitle: 'Développeur Full Stack',
+      subtitle: 'Full Stack Developer',
     },
     services: {
       title: 'Services et Expertise',
       subtitle: 'Des Solutions Complètes pour les Entreprises Modernes',
       desc: 'De la conception au déploiement, je propose des services de développement complets alliant excellence technique et valeur ajoutée pour votre entreprise.',
       s1: { title: 'Conseil Technique et Stratégie', desc: "Conseil technologique stratégique pour startups et entreprises. Accompagnement expert sur le choix de stack technique, la conception d'architecture et les solutions évolutives." },
-      s2: { title: 'Développement Web Full-Stack', desc: "Conception d'applications web modernes et performantes. Expertise polyvalente sur les stacks d'entreprise : ASP.NET Core (C#), Java Spring Boot, Node.js (Express/NestJS), Python, couplés aux frameworks front-end React, Next.js et Angular pour des architectures robustes et sécurisées." },
+      s2: { title: 'Développement Web Full-Stack', desc: "Conception d'applications web modernes et performantes. Expertise polyvalente sur les stacks d'entreprise : ASP.NET Core (C#), Java Spring Boot, Node.js/NestJS, Python, couplés aux frameworks front-end React, Next.js et Angular pour des architectures robustes et sécurisées." },
       s3: { title: "Développement d'Apps Mobiles", desc: "Création d'expériences mobiles natives et hybrides fluides avec React Native et Flutter. Focus sur la performance, le design UX/UI et les fonctionnalités temps réel." },
       s4: { title: 'Architecture Cloud et DevOps', desc: "Infrastructure cloud évolutive sur AWS, Azure ou GCP. Conteneurisation avec Docker/Kubernetes, déploiements automatisés et surveillance." },
       s5: { title: 'Optimisation Performance et SEO', desc: "Audits de performance web, optimisation des Core Web Vitals et SEO technique. Amélioration de la vitesse de page et de l'accessibilité." },
@@ -56,7 +56,7 @@ export const translations = {
       devops: "BDD & DevOps",
       certsTitle: "Certifications",
       s_react: "React.js, Next.js, Angular, Flutter, React Native, TypeScript, Tailwind CSS.",
-      s_node: "ASP.NET Core (C#), Node.js, NestJS, Express, Python, Java Spring Boot, Entity Framework.",
+      s_node: "ASP.NET Core (C#), Node.js/NestJS, Express, Python, Java Spring Boot, Entity Framework.",
       s_cloud: "AWS, Azure, Spark, Scala, Elasticsearch, Kibana, Databricks.",
       s_devops: "PostgreSQL, MySQL, MongoDB, Redis, Docker, Kubernetes, CI/CD, Git.",
     },
@@ -74,6 +74,7 @@ export const translations = {
           tasks: [
             "Conception de l'architecture Full-Stack avec Next.js et Node.js/NestJS",
             "Mise en place d'un système de réservation en temps réel",
+            "Optimisation SEO technique et visibilité",
             "Intégration de passerelles de paiement sécurisées",
             "Développement d'un tableau de bord administrateur pour la gestion des flux"
           ]
@@ -108,7 +109,7 @@ export const translations = {
             "Développement de formulaires de souscription dynamiques complexes",
             "Gestion des documents justificatifs via stockage Cloud",
             "Mise en place d'un moteur de calcul de devis instantané",
-            "Architecture API RESTful avec Express.js/Node.js"
+            "Architecture API RESTful avec Express.js/Node.js/NestJS"
           ]
         },
         cuberfit: {
@@ -215,7 +216,7 @@ export const translations = {
       subtitle: 'Complete Solutions for Modern Businesses',
       desc: 'From design to deployment, I offer comprehensive development services combining technical excellence and added value for your business.',
       s1: { title: 'Technical Consulting & Strategy', desc: 'Strategic technology consulting for startups and companies. Expert advice on tech stack choice, architecture design and scalable solutions.' },
-      s2: { title: 'Full-Stack Web Development', desc: 'Design of modern and highly performant web applications. Multi-stack enterprise expertise: ASP.NET Core (C#), Java Spring Boot, Node.js (Express/NestJS), Python, combined with front-end frameworks like React, Next.js, and Angular for robust and secure architectures.' },
+      s2: { title: 'Full-Stack Web Development', desc: 'Design of modern and highly performant web applications. Multi-stack enterprise expertise: ASP.NET Core (C#), Java Spring Boot, Node.js/NestJS, Python, combined with front-end frameworks like React, Next.js, and Angular for robust and secure architectures.' },
       s3: { title: 'Mobile App Development', desc: 'Creating seamless native and hybrid mobile experiences with React Native and Flutter. Focus on performance, UX/UI design, and real-time features.' },
       s4: { title: 'Cloud Architecture & DevOps', desc: 'Scalable cloud infrastructure on AWS, Azure, or GCP. Containerization with Docker/Kubernetes, automated deployments and monitoring.' },
       s5: { title: 'Performance & SEO Optimization', desc: 'Web performance audits, Core Web Vitals optimization, and technical SEO. Improving page speed and accessibility to maximize user engagement.' },
@@ -230,7 +231,7 @@ export const translations = {
       devops: "DB & DevOps",
       certsTitle: "Certifications",
       s_react: "React.js, Next.js, Angular, Flutter, React Native, TypeScript, Tailwind CSS.",
-      s_node: "ASP.NET Core (C#), Node.js, NestJS, Express, Python, Java Spring Boot, Entity Framework.",
+      s_node: "ASP.NET Core (C#), Node.js/NestJS, Express, Python, Java Spring Boot, Entity Framework.",
       s_cloud: "AWS, Azure, Spark, Scala, Elasticsearch, Kibana, Databricks.",
       s_devops: "PostgreSQL, MySQL, MongoDB, Redis, Docker, Kubernetes, CI/CD, Git.",
     },
@@ -248,6 +249,7 @@ export const translations = {
           tasks: [
             "Full-Stack architecture design with Next.js and Node.js/NestJS",
             "Real-time booking system implementation",
+            "Technical SEO optimization & visibility",
             "Secure payment gateway integration",
             "Admin dashboard development for flow management"
           ]
@@ -282,7 +284,7 @@ export const translations = {
             "Complex dynamic subscription forms development",
             "Supporting documents management via Cloud storage",
             "Instant quote calculation engine implementation",
-            "RESTful API architecture with Express.js/Node.js"
+            "RESTful API architecture with Express.js/Node.js/NestJS"
           ]
         },
         cuberfit: {

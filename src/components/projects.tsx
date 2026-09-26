@@ -35,7 +35,7 @@ export function Projects() {
       date: t.projects.items.okooltrip.date,
       desc: t.projects.items.okooltrip.desc,
       tasks: t.projects.items.okooltrip.tasks,
-      tech: ['Next.js', 'Node.js', 'NestJS', 'Prisma', 'PostgreSQL'],
+      tech: ['Next.js', 'Node.js/NestJS', 'Prisma', 'PostgreSQL', 'SEO'],
       icon: <div className="flex items-center gap-1 scale-90">
               <div className="flex items-center font-black text-5xl tracking-tighter">
                 <span className="text-slate-900">Ok</span>
@@ -77,7 +77,7 @@ export function Projects() {
       date: t.projects.items.fegnseo.date,
       desc: t.projects.items.fegnseo.desc,
       tasks: t.projects.items.fegnseo.tasks,
-      tech: ['React', 'Python', 'Recharts', 'Node.js', 'NestJS'],
+      tech: ['React', 'Python', 'Recharts', 'Node.js/NestJS'],
       icon: <h3 className="text-2xl font-black text-blue-600 tracking-tighter">Fegn<span className="text-blue-400 italic">SEO</span></h3>,
     },
     {
@@ -87,7 +87,7 @@ export function Projects() {
       date: t.projects.items.assuraf.date,
       desc: t.projects.items.assuraf.desc,
       tasks: t.projects.items.assuraf.tasks,
-      tech: ['Express.js', 'React', 'MongoDB', 'Cloud Storage', 'Node.js'],
+      tech: ['Express.js', 'React', 'MongoDB', 'Cloud Storage', 'Node.js/NestJS'],
       icon: <div className="flex items-center gap-1">
               <div className="relative w-14 h-14">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -121,7 +121,7 @@ export function Projects() {
       date: t.projects.items.cuberfit.date,
       desc: t.projects.items.cuberfit.desc,
       tasks: t.projects.items.cuberfit.tasks,
-      tech: ['React Native', 'Expo', 'Socket.io', 'Node.js', 'NestJS'],
+      tech: ['React Native', 'Expo', 'Socket.io', 'Node.js/NestJS'],
       icon: <div className="relative w-48 h-24">
               <Image 
                 src={cuberfitLogo?.imageUrl || "/cuberfit.png"} 
@@ -150,7 +150,7 @@ export function Projects() {
               className={cn(
                 "text-sm md:text-base font-bold transition-all whitespace-nowrap",
                 activeTab === cat.id 
-                  ? "text-[#ff5a60] scale-110" 
+                  ? "text-primary scale-110" 
                   : "text-slate-500 hover:text-slate-700"
               )}
             >
@@ -163,17 +163,17 @@ export function Projects() {
           {filteredProjects.map((project) => (
             <Dialog key={project.id}>
               <DialogTrigger asChild>
-                <div className="group relative">
-                  <div className="aspect-[1.4/1] bg-[#dee2ff] rounded-[2.5rem] flex items-center justify-center transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-indigo-200/50 group-hover:-translate-y-2 cursor-pointer overflow-hidden">
+                <button className="group relative w-full text-left outline-none">
+                  <div className="aspect-[1.4/1] bg-[#dee2ff] rounded-[2.5rem] flex items-center justify-center transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-indigo-200/50 group-hover:-translate-y-2 overflow-hidden">
                     <div className="transition-transform duration-500 group-hover:scale-110">
                       {project.icon}
                     </div>
                     <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <div className="mt-4 px-4 opacity-0 group-hover:opacity-100 transition-opacity text-center">
+                  <div className="mt-4 px-4 text-center">
                     <span className="font-bold text-slate-700">{project.title}</span>
                   </div>
-                </div>
+                </button>
               </DialogTrigger>
               <DialogContent className="max-w-2xl bg-card border-border sm:rounded-[2rem]">
                 <DialogHeader>
@@ -195,7 +195,7 @@ export function Projects() {
                   </div>
 
                   <div className="space-y-4">
-                    <h4 className="font-bold text-lg flex items-center gap-2">
+                    <h4 className="font-bold text-lg flex items-center gap-2 text-foreground">
                       <ChevronRight className="w-5 h-5 text-primary" /> {t.projects.realizations}
                     </h4>
                     <ul className="grid gap-3">
@@ -209,7 +209,7 @@ export function Projects() {
                   </div>
 
                   <div className="space-y-4">
-                    <h4 className="font-bold text-lg flex items-center gap-2">
+                    <h4 className="font-bold text-lg flex items-center gap-2 text-foreground">
                       <ChevronRight className="w-5 h-5 text-primary" /> {t.projects.tech}
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -228,7 +228,7 @@ export function Projects() {
 
         <div className="mt-20 flex justify-center">
           <Button 
-            className="bg-[#ff5a60] hover:bg-[#ff454b] text-white font-bold rounded-full px-12 h-14 text-lg shadow-lg shadow-red-200 transition-all hover:scale-105 active:scale-95"
+            className="bg-primary hover:bg-primary/90 text-white font-bold rounded-full px-12 h-14 text-lg shadow-lg transition-all hover:scale-105 active:scale-95"
           >
             {t.projects.loadMore}
           </Button>
