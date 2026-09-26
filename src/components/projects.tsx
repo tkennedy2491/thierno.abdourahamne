@@ -77,7 +77,7 @@ export function Projects() {
       date: t.projects.items.fegnseo.date,
       desc: t.projects.items.fegnseo.desc,
       tasks: t.projects.items.fegnseo.tasks,
-      tech: ['React', 'Python', 'Recharts', 'Node.js/NestJS'],
+      tech: ['Next.js', 'Node.js/NestJS', 'Prisma', 'PostgreSQL', 'SEO'],
       icon: <h3 className="text-2xl font-black text-blue-600 tracking-tighter">Fegn<span className="text-blue-400 italic">SEO</span></h3>,
     },
     {
