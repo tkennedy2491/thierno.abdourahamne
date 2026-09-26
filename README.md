@@ -32,7 +32,7 @@ Vercel est la plateforme la plus simple pour déployer Next.js sans avoir besoin
 
 ## 📁 Gestion du CV
 Pour mettre à jour votre CV :
-1. Renommez votre nouveau fichier PDF en **`cv.pdf`**.
+1. Renommez votre nouveau fichier PDF exactement comme ceci : **`CV_Thierno Abdourahmane_Diallo.pdf`**.
 2. Placez-le dans le dossier **`public/`** à la racine de ce projet.
 3. Le lien de téléchargement sur le site sera mis à jour automatiquement.
 

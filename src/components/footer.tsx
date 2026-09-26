@@ -115,8 +115,8 @@ export function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="/cv.pdf" 
-                    download="cv.pdf" 
+                    href="/CV_Thierno Abdourahmane_Diallo.pdf" 
+                    download="CV_Thierno_Abdourahmane_Diallo.pdf" 
                     className="text-slate-400 hover:text-white text-sm transition-colors"
                   >
                     CV
