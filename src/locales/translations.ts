@@ -72,7 +72,7 @@ export const translations = {
           date: 'Décembre 2023 - Présent',
           desc: 'Plateforme complète de billetterie et de gestion de voyages.',
           tasks: [
-            "Conception de l'architecture Full-Stack avec Next.js et Node.js/NestJS",
+            "Conception de l'architecture Full-Stack avec Next.js and Node.js/NestJS",
             "Mise en place d'un système de réservation en temps réel",
             "Optimisation SEO technique et visibilité",
             "Intégration de passerelles de paiement sécurisées",
@@ -106,21 +106,22 @@ export const translations = {
           date: 'Septembre 2023 - Janvier 2024',
           desc: 'Solution digitale de souscription d\'assurance en ligne simplifiée.',
           tasks: [
-            "Développement de formulaires de souscription dynamiques complexes",
+            "Développement de formulaires de souscription dynamiques complexes en Vue.js",
             "Gestion des documents justificatifs via stockage Cloud",
             "Mise en place d'un moteur de calcul de devis instantané",
-            "Architecture API RESTful avec Express.js/Node.js/NestJS"
+            "Architecture API robuste avec Node.js/NestJS et Express.js"
           ]
         },
         cuberfit: {
           title: 'Cuberfit',
           date: 'Mars 2024 - Présent',
-          desc: 'Application mobile de coaching et suivi fitness personnalisé.',
+          desc: 'SaaS et Plateforme web de coaching et suivi fitness personnalisé avec suivi intelligent.',
           tasks: [
-            "Développement de l'application mobile sous React Native / Expo",
-            "Système de suivi d'exercices avec historisation des données",
-            "Intégration de notifications push pour l'engagement utilisateur",
-            "Architecture Backend temps réel avec Socket.io et Node.js/NestJS"
+            "Développement de la plateforme web moderne et réactive avec Next.js",
+            "Conception et intégration d'une API REST hautes performances avec Node.js/NestJS",
+            "Mise en cache globale, rapidité et gestion des sessions avec Redis",
+            "Déploiement, scalabilité et conteneurisation de l'infrastructure sur AWS avec Docker",
+            "Intégration de fonctionnalités d'intelligence artificielle (AI) pour l'analyse des performances physiques"
           ]
         }
       }
@@ -281,21 +282,22 @@ export const translations = {
           date: 'September 2023 - January 2024',
           desc: 'Simplified online insurance subscription digital solution.',
           tasks: [
-            "Complex dynamic subscription forms development",
+            "Development of complex dynamic subscription forms in Vue.js",
             "Supporting documents management via Cloud storage",
             "Instant quote calculation engine implementation",
-            "RESTful API architecture with Express.js/Node.js/NestJS"
+            "Robust API architecture with Node.js/NestJS and Express.js"
           ]
         },
         cuberfit: {
           title: 'Cuberfit',
           date: 'March 2024 - Present',
-          desc: 'Personalized mobile coaching and fitness tracking application.',
+          desc: 'SaaS and Web platform for personalized coaching and fitness tracking.',
           tasks: [
-            "Mobile app development using React Native / Expo",
-            "Exercise tracking system with data logging",
-            "Push notifications integration for user engagement",
-            "Real-time Backend architecture with Socket.io and Node.js/NestJS"
+            "Development of the modern and responsive web platform using Next.js",
+            "Design and integration of a high-performance REST API with Node.js/NestJS",
+            "Global caching, speed, and session management with Redis",
+            "Deployment, scalability, and containerization of the infrastructure on AWS with Docker",
+            "Integration of artificial intelligence (AI) features for physical performance analysis"
           ]
         }
       }

@@ -87,7 +87,7 @@ export function Projects() {
       date: t.projects.items.assuraf.date,
       desc: t.projects.items.assuraf.desc,
       tasks: t.projects.items.assuraf.tasks,
-      tech: ['Vue.js', 'Express.js', 'React', 'MongoDB', 'Cloud Storage', 'Node.js/NestJS'],
+      tech: ['Vue.js', 'Express.js', 'MongoDB', 'Cloud Storage', 'Node.js/NestJS'],
       icon: <div className="flex items-center gap-1">
               <div className="relative w-14 h-14">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -117,11 +117,11 @@ export function Projects() {
     {
       id: 'cuberfit',
       title: 'Cuberfit',
-      category: 'mobile',
+      category: 'web',
       date: t.projects.items.cuberfit.date,
       desc: t.projects.items.cuberfit.desc,
       tasks: t.projects.items.cuberfit.tasks,
-      tech: ['React Native', 'Expo', 'Socket.io', 'Node.js/NestJS'],
+      tech: ['Next.js', 'REST API', 'Redis', 'AWS', 'AI', 'Docker', 'Node.js/NestJS'],
       icon: <div className="relative w-48 h-24">
               <Image 
                 src={cuberfitLogo?.imageUrl || "/cuberfit.png"} 
