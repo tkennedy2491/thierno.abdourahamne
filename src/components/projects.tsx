@@ -87,7 +87,7 @@ export function Projects() {
       date: t.projects.items.assuraf.date,
       desc: t.projects.items.assuraf.desc,
       tasks: t.projects.items.assuraf.tasks,
-      tech: ['Vue.js', 'Express.js', 'MongoDB', 'Cloud Storage', 'Node.js/NestJS'],
+      tech: ['Vue.js', 'Express.js', 'MongoDB', 'Cloud Storage', 'Node.js/NestJS', 'PostgreSQL'],
       icon: <div className="flex items-center gap-1">
               <div className="relative w-14 h-14">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -121,7 +121,7 @@ export function Projects() {
       date: t.projects.items.cuberfit.date,
       desc: t.projects.items.cuberfit.desc,
       tasks: t.projects.items.cuberfit.tasks,
-      tech: ['Next.js', 'REST API', 'Redis', 'AWS', 'AI', 'Docker', 'Node.js/NestJS'],
+      tech: ['Next.js', 'REST API', 'Redis', 'AWS', 'AI', 'Docker', 'Node.js/NestJS', 'PostgreSQL'],
       icon: <div className="relative w-48 h-24">
               <Image 
                 src={cuberfitLogo?.imageUrl || "/cuberfit.png"} 
@@ -230,7 +230,7 @@ export function Projects() {
           <Button 
             className="bg-primary hover:bg-primary/90 text-white font-bold rounded-full px-12 h-14 text-lg shadow-lg transition-all hover:scale-105 active:scale-95"
           >
-            {t.projects.loadMore}
+            {t.projects.categories.all === 'Tous les projets' ? 'Charger plus de projets' : 'Load more projects'}
           </Button>
         </div>
       </div>
